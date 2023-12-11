@@ -1,3 +1,4 @@
+http://qushao.top/2023/12/11/Elasticsearch%E5%AE%89%E8%A3%85%E5%8F%8A%E6%A8%A1%E6%8B%9F%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/
 http://qushao.top/2022/10/27/MQ(%E4%BA%8C)/
 http://qushao.top/2021/12/07/%E8%AF%AD%E5%BD%95/
 http://qushao.top/2022/04/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/
@@ -25,6 +26,7 @@ http://qushao.top/
 http://qushao.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
 http://qushao.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/
 http://qushao.top/tags/CNN/
+http://qushao.top/tags/Elasticsearch/
 http://qushao.top/tags/Java/
 http://qushao.top/tags/JVM/
 http://qushao.top/tags/%E6%B1%82%E8%81%8C/
@@ -41,6 +43,7 @@ http://qushao.top/tags/English/
 http://qushao.top/tags/%E8%AF%BB%E4%B9%A6/
 http://qushao.top/tags/%E8%AF%AD%E5%BD%95/
 http://qushao.top/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+http://qushao.top/categories/Elasticsearch/
 http://qushao.top/categories/Java/
 http://qushao.top/categories/JVM/
 http://qushao.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
