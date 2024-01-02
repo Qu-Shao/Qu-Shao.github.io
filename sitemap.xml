@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qushao.top/2024/01/02/IDEA%20Plugins/</loc>
+    
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://qushao.top/2023/12/13/Elasticsearch%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2024-01-02</lastmod>
@@ -271,6 +280,13 @@
   </url>
   
   <url>
+    <loc>http://qushao.top/tags/%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2024-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://qushao.top/tags/JVM/</loc>
     <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -392,6 +408,13 @@
   </url>
   
   <url>
+    <loc>http://qushao.top/categories/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2024-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://qushao.top/categories/JVM/</loc>
     <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -414,13 +437,6 @@
   
   <url>
     <loc>http://qushao.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2024-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://qushao.top/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
