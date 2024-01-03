@@ -10,8 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="iuYWJ97yBKj4O2Fp5Itv5bRDTCSSdKvgl_DDUa4sFp8">
-  <meta name="baidu-site-verification" content="code-isQpIpC66p">
+  <meta name="google-site-verification" content="ITNAemUjXaTd1v5hUBGye5IrdyCfz_nS7lgBEtda2">
+  <meta name="msvalidate.01" content="86188A2C1964427EB942511DCFE5EB04">
+  <meta name="baidu-site-verification" content="codeva-8LOI8JhMYp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -26,13 +27,13 @@
 
     <meta name="description" content="JVM常见知识点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM学习笔记">
+<meta property="og:title" content="JVM 学习笔记">
 <meta property="og:url" content="http://qushao.top/2022/0728becffb.html">
 <meta property="og:site_name" content="屈少">
 <meta property="og:description" content="JVM常见知识点">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-06-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-13T11:25:33.955Z">
+<meta property="article:modified_time" content="2024-01-03T10:59:54.777Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="JVM">
 <meta property="article:tag" content="求职">
@@ -43,10 +44,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/0728becffb.html","path":"2022/0728becffb.html","title":"JVM学习笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/0728becffb.html","path":"2022/0728becffb.html","title":"JVM 学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>JVM学习笔记 | 屈少</title>
+<title>JVM 学习笔记 | 屈少</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKP2CMZE2V"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-WKP2CMZE2V","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -150,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">JVM学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F%EF%BC%88Class-Loader-Subsystem%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">类加载子系统（Class Loader Subsystem）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%EF%BC%88Runtime-Data-Area%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">运行时数据区（Runtime Data Area）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%EF%BC%88Garbage-Collection%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">垃圾回收（Garbage Collection）</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">JVM 学习笔记 </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F%EF%BC%88Class-Loader-Subsystem%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text"> 类加载子系统（Class Loader Subsystem）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%EF%BC%88Runtime-Data-Area%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">运行时数据区（Runtime Data Area）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%EF%BC%88Garbage-Collection%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">垃圾回收（Garbage Collection）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,12 +236,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="JVM学习笔记 | 屈少">
+      <meta itemprop="name" content="JVM 学习笔记 | 屈少">
       <meta itemprop="description" content="JVM常见知识点">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JVM学习笔记
+          JVM 学习笔记
         </h1>
 
         <div class="post-meta-container">
@@ -258,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 19:25:33" itemprop="dateModified" datetime="2023-11-13T19:25:33+08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,7 +272,7 @@
     </span>
 
   
-    <span id="/2022/0728becffb.html" class="post-meta-item leancloud_visitors" data-flag-title="JVM学习笔记" title="Views">
+    <span id="/2022/0728becffb.html" class="post-meta-item leancloud_visitors" data-flag-title="JVM 学习笔记" title="Views">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -293,7 +294,7 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="JVM学习笔记" href="/2022/0728becffb.html#SOHUCS" itemprop="discussionUrl">
+    <a title="JVM 学习笔记" href="/2022/0728becffb.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::c20623a5b130cc857560e29528df2a32" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -322,35 +323,35 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="JVM学习笔记"><a href="#JVM学习笔记" class="headerlink" title="JVM学习笔记"></a>JVM学习笔记</h1><h2 id="类加载子系统（Class-Loader-Subsystem）"><a href="#类加载子系统（Class-Loader-Subsystem）" class="headerlink" title="类加载子系统（Class Loader Subsystem）"></a>类加载子系统（Class Loader Subsystem）</h2><ol>
-<li><p>类加载过程分为三个阶段：加载、链接、初始化。其中加载是指获取字节码文件的二进制字节流并转化为方法区的运行时数据结构，在内存中生成一个代表该类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口；链接又分为验证、准备、解析三个阶段，其中验证在于确保Class文件的字节流中包含信息符合当前虚拟机要求，保证被加载类的正确性，比如所有的字节码文件都是以“cafebabe”4个字节开头，准备阶段为类变量分配内存并设置默认值，注意这里不会为实例变量分配初始化，实例变量会随着对象一起分配到Java堆中，解析阶段将常量池内的符号引用转换为直接引用；初始化阶段就是执行类构造器方法<clinit>()的过程。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="JVM 学习笔记"><a href="#JVM 学习笔记" class="headerlink" title="JVM 学习笔记"></a>JVM 学习笔记 </h1><h2 id="类加载子系统（Class-Loader-Subsystem）"><a href="# 类加载子系统（Class-Loader-Subsystem）" class="headerlink" title="类加载子系统（Class Loader Subsystem）"></a> 类加载子系统（Class Loader Subsystem）</h2><ol>
+<li><p>类加载过程分为三个阶段：加载、链接、初始化。其中加载是指获取字节码文件的二进制字节流并转化为方法区的运行时数据结构，在内存中生成一个代表该类的 java.lang.Class 对象，作为方法区这个类的各种数据的访问入口；链接又分为验证、准备、解析三个阶段，其中验证在于确保 Class 文件的字节流中包含信息符合当前虚拟机要求，保证被加载类的正确性，比如所有的字节码文件都是以“cafebabe”4 个字节开头，准备阶段为类变量分配内存并设置默认值，注意这里不会为实例变量分配初始化，实例变量会随着对象一起分配到 Java 堆中，解析阶段将常量池内的符号引用转换为直接引用；初始化阶段就是执行类构造器方法 <clinit>() 的过程。</p>
 </li>
-<li><p>类构造器方法<clinit>()是javac编译器自动收集类中所有类变量（静态变量）的赋值动作和静态代码块中的语句合并而来，如果类中不存在以上情况，则在方法区中也不会存在该方法。</p>
+<li><p>类构造器方法 <clinit>() 是 javac 编译器自动收集类中所有类变量（静态变量）的赋值动作和静态代码块中的语句合并而来，如果类中不存在以上情况，则在方法区中也不会存在该方法。</p>
 </li>
-<li><p>如果一个类存在父类，则JVM会保证在子类的<clinit>()执行前，父类的<clinit>()已经执行完毕。</p>
+<li><p>如果一个类存在父类，则 JVM 会保证在子类的 <clinit>() 执行前，父类的 <clinit>() 已经执行完毕。</p>
 </li>
-<li><p>类加载器的分类：引导类加载器（c&#x2F;c++语言编写）和自定义类加载器。这里的自定义类加载器不是指程序员自己定义的，而是指所有派生于抽象类ClassLoader的类加载器，是广义上的自定义。细分为三种加载器：引导类加载器、扩展类加载器、系统类加载器。</p>
+<li><p>类加载器的分类：引导类加载器（c&#x2F;c++ 语言编写）和自定义类加载器。这里的自定义类加载器不是指程序员自己定义的，而是指所有派生于抽象类 ClassLoader 的类加载器，是广义上的自定义。细分为三种加载器：引导类加载器、扩展类加载器、系统类加载器。</p>
 </li>
 <li><p>对于用户自定义类来说，默认使用系统类加载器进行加载。</p>
 </li>
-<li><p>系统的核心类库（比如String类）使用引导类加载器进行加载。</p>
+<li><p>系统的核心类库（比如 String 类）使用引导类加载器进行加载。</p>
 </li>
 <li><p>需要用户去自定义类加载器的情况：隔离加载类；修改类加载的方式；扩展加载源；防止源码泄漏。</p>
 </li>
-<li><p>用户如何自定义类加载器：一般通过继承ClassLoader类并重写findClass()方法；也可以直接继承URLClassLoader类，这样可以避免重写findClass()方法及其获取字节码流的方式。</p>
+<li><p>用户如何自定义类加载器：一般通过继承 ClassLoader 类并重写 findClass()方法；也可以直接继承 URLClassLoader 类，这样可以避免重写 findClass()方法及其获取字节码流的方式。</p>
 </li>
 <li><p>双亲委派机制：如果一个类加载器收到了类加载请求，并不会直接加载，而是将这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CustomClassLoader -&gt; ApplicationClassLoader -&gt; ExtensionClassLoader -&gt; BootstrapClassLoader</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>双亲委派机制的优势：避免类的重复加载；保护程序安全，防止核心API被随意篡改。</p>
+<li><p>双亲委派机制的优势：避免类的重复加载；保护程序安全，防止核心 API 被随意篡改。</p>
 </li>
-<li><p>在JVM中表示两个class对象是否为同一个类的两个必要条件：类的完整类名必须一致（包括包名）；加载这个类的ClassLoader必须相同。</p>
+<li><p>在 JVM 中表示两个 class 对象是否为同一个类的两个必要条件：类的完整类名必须一致（包括包名）；加载这个类的 ClassLoader 必须相同。</p>
 </li>
 </ol>
-<h2 id="运行时数据区（Runtime-Data-Area）"><a href="#运行时数据区（Runtime-Data-Area）" class="headerlink" title="运行时数据区（Runtime Data Area）"></a>运行时数据区（Runtime Data Area）</h2><ol>
-<li><p>PC寄存器既没有GC也没有OOM。</p>
+<h2 id="运行时数据区（Runtime-Data-Area）"><a href="# 运行时数据区（Runtime-Data-Area）" class="headerlink" title="运行时数据区（Runtime Data Area）"></a>运行时数据区（Runtime Data Area）</h2><ol>
+<li><p>PC 寄存器既没有 GC 也没有 OOM。</p>
 </li>
-<li><p>Java虚拟机栈是线程私有的，主管Java程序的运行，它保存方法的局部变量、部分结果，并参与方法的调用和返回。</p>
+<li><p>Java 虚拟机栈是线程私有的，主管 Java 程序的运行，它保存方法的局部变量、部分结果，并参与方法的调用和返回。</p>
 </li>
 <li><p>我们可以使用参数 -Xss 选项来设置线程的最大栈空间，栈的大小直接决定了函数调用的最大可达深度。</p>
 </li>
@@ -358,76 +359,76 @@
 </li>
 <li><p>栈帧中有五部分：局部变量表；操作数栈；动态链接；方法返回地址；一些附加信息。</p>
 </li>
-<li><p>局部变量表定义为一个数组，主要用于存储方法参数和定义在方法体内的局部变量，具体包括各类基本数据类型、对象引用以及returnAddress类型。</p>
+<li><p>局部变量表定义为一个数组，主要用于存储方法参数和定义在方法体内的局部变量，具体包括各类基本数据类型、对象引用以及 returnAddress 类型。</p>
 </li>
-<li><p>在字节码文件中，LineNumberTable中存储了字节码代码和源代码在行号上的对应关系；LocalVariableTable中存储了每一个变量在字节码代码中的生效行数和作用范围域以及描述符等其他信息。</p>
+<li><p>在字节码文件中，LineNumberTable 中存储了字节码代码和源代码在行号上的对应关系；LocalVariableTable 中存储了每一个变量在字节码代码中的生效行数和作用范围域以及描述符等其他信息。</p>
 </li>
-<li><p>局部变量表最基本的存储单元是Slot（变量槽），在局部变量表里，32位以内的类型只占用一个slot，64位的类型占用两个slot。</p>
+<li><p>局部变量表最基本的存储单元是 Slot（变量槽），在局部变量表里，32 位以内的类型只占用一个 slot，64 位的类型占用两个 slot。</p>
 </li>
-<li><p>构造器和实例方法中，this变量被放置于索引为0的slot处，这也解释了为什么静态方法不可以调用this，因为在静态方法的局部变量表中不存在this变量。</p>
+<li><p>构造器和实例方法中，this 变量被放置于索引为 0 的 slot 处，这也解释了为什么静态方法不可以调用 this，因为在静态方法的局部变量表中不存在 this 变量。</p>
 </li>
 <li><p>动态链接的作用是将符号引用转换为调用方法的直接引用。</p>
 </li>
-<li><p>在面向对象的编程中，会很频繁地使用到动态分派，如果在每次动态分派的过程中都要重新在类的方法元数据中搜索合适的目标的话就可能影响到执行效率。因此，为了提高性能，JVM采用在类的方法区建立一个虚方法表（非虚方法不会出现在表中）来实现，使用索引表来代替查找。虚方法表在类加载的链接阶段被创建并开始初始化。</p>
+<li><p>在面向对象的编程中，会很频繁地使用到动态分派，如果在每次动态分派的过程中都要重新在类的方法元数据中搜索合适的目标的话就可能影响到执行效率。因此，为了提高性能，JVM 采用在类的方法区建立一个虚方法表（非虚方法不会出现在表中）来实现，使用索引表来代替查找。虚方法表在类加载的链接阶段被创建并开始初始化。</p>
 </li>
 <li><p>本地方法栈，也是线程私有的。</p>
 </li>
-<li><p>-Xms用于表示堆区的起始内存，等价于-XX:InitialHeapSize；-Xmx用于表示堆区的最大内存，等价于-XX:MaxHeapSize。通常会将这两个参数配置相同的值，其目的是为了能够在java垃圾回收机制清理完堆区后不需要重新分隔计算堆区的大小，从而提高性能。</p>
+<li><p>-Xms 用于表示堆区的起始内存，等价于 -XX:InitialHeapSize；-Xmx 用于表示堆区的最大内存，等价于 -XX:MaxHeapSize。通常会将这两个参数配置相同的值，其目的是为了能够在 java 垃圾回收机制清理完堆区后不需要重新分隔计算堆区的大小，从而提高性能。</p>
 </li>
-<li><p>垃圾回收分为三种：Minor GC、Major GC、Full GC。Minor GC回收新生代的对象，发生频率最高；Major GC回收老年代的对象；Full GC收集整个Java堆和方法区的垃圾。其中后两者所需要的时间更久，也是GC调优的主要目标和目的。</p>
+<li><p>垃圾回收分为三种：Minor GC、Major GC、Full GC。Minor GC 回收新生代的对象，发生频率最高；Major GC 回收老年代的对象；Full GC 收集整个 Java 堆和方法区的垃圾。其中后两者所需要的时间更久，也是 GC 调优的主要目标和目的。</p>
 </li>
 <li><p>常用参数：</p>
 <p>（1）-XX:+PrintFlagsInitial ：查看所有的参数的默认初始值</p>
 <p>（2）-XX:+PrintFlagsFinal ：查看所有的参数的最终值</p>
 <p>（3）-XX:NewRatio ：配置新生代与老年代在堆结构的占比</p>
-<p>（4）-Xms ：初始化堆空间内存（默认为物理内存的1&#x2F;64）</p>
-<p>（5）-Xmx ：最大堆空间内存（默认为物理内存的1&#x2F;4）</p>
+<p>（4）-Xms ：初始化堆空间内存（默认为物理内存的 1&#x2F;64）</p>
+<p>（5）-Xmx ：最大堆空间内存（默认为物理内存的 1&#x2F;4）</p>
 <p>（6）-Xmn ：设置新生代的大小（初始值以及最大值）</p>
-<p>（7）-XX:SurvivorRatio ：设置新生代中Eden和S0&#x2F;S1空间的比例</p>
+<p>（7）-XX:SurvivorRatio ：设置新生代中 Eden 和 S0&#x2F;S1 空间的比例</p>
 <p>（8）-XX:MaxTenuringThreshold ：设置新生代垃圾的最大年龄</p>
-<p>（9）-XX:+PrintGCDetails ：输出详细的GC日志</p>
+<p>（9）-XX:+PrintGCDetails ：输出详细的 GC 日志</p>
 <p>（10）-XX:HandlePromotionFailure ：是否设置空间分配担保</p>
 </li>
-<li><p>对象实例化的步骤：判断对象对用的类是否加载、链接、初始化；为对象分配内存；处理并发安全问题；初始化分配到的空间（所有属性设置默认值）；设置对象的对象头；执行init方法进行初始化。</p>
+<li><p>对象实例化的步骤：判断对象对用的类是否加载、链接、初始化；为对象分配内存；处理并发安全问题；初始化分配到的空间（所有属性设置默认值）；设置对象的对象头；执行 init 方法进行初始化。</p>
 </li>
 <li><p>对象在内存中分为对象头、实例数据、对齐填充（非必须）几部分。</p>
 </li>
-<li><p>对象头中包含两部分，一部分是运行时元数据，具体包括对象哈希值、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳；另一部分为类型指针，指向类元数据InstanceKlass，确定该对象所属的类型。</p>
+<li><p>对象头中包含两部分，一部分是运行时元数据，具体包括对象哈希值、GC 分代年龄、锁状态标志、线程持有的锁、偏向线程 ID、偏向时间戳；另一部分为类型指针，指向类元数据 InstanceKlass，确定该对象所属的类型。</p>
 </li>
 </ol>
-<h2 id="垃圾回收（Garbage-Collection）"><a href="#垃圾回收（Garbage-Collection）" class="headerlink" title="垃圾回收（Garbage Collection）"></a>垃圾回收（Garbage Collection）</h2><ol>
-<li>JDK8开始，设置StringTableSize的最小值为1009。</li>
+<h2 id="垃圾回收（Garbage-Collection）"><a href="# 垃圾回收（Garbage-Collection）" class="headerlink" title="垃圾回收（Garbage Collection）"></a>垃圾回收（Garbage Collection）</h2><ol>
+<li>JDK8 开始，设置 StringTableSize 的最小值为 1009。</li>
 <li>字符串常量的拼接结果存放在常量池中，原理是编译期优化。</li>
-<li>字符串拼接只要有一个是变量，结果存放在堆中，变量拼接的原理是StringBuilder。</li>
-<li>如果拼接的结果调用intern()方法，则主动将常量池中还没有的字符串对象放入池中，并返回此对象地址。</li>
-<li>intern()方法在JDK1.6和JDK1.7之后的版本的不同在于如果intern()方法调用的字符串在常量字符串中不存在，在JDK1.6中会将此对象复制一份放入串池并返回串池中的对象地址；在JDK1.7以及之后的版本则会将对象的引用地址复制一份放入串池中并返回串池中的引用地址。</li>
+<li>字符串拼接只要有一个是变量，结果存放在堆中，变量拼接的原理是 StringBuilder。</li>
+<li>如果拼接的结果调用 intern()方法，则主动将常量池中还没有的字符串对象放入池中，并返回此对象地址。</li>
+<li>intern()方法在 JDK1.6 和 JDK1.7 之后的版本的不同在于如果 intern()方法调用的字符串在常量字符串中不存在，在 JDK1.6 中会将此对象复制一份放入串池并返回串池中的对象地址；在 JDK1.7 以及之后的版本则会将对象的引用地址复制一份放入串池中并返回串池中的引用地址。</li>
 <li>标记阶段主要算法：引用计数算法；可达性分析算法（根搜索算法）。</li>
-<li>清除阶段主要算法：标记-清除算法；复制算法；标记-压缩算法。</li>
+<li>清除阶段主要算法：标记 - 清除算法；复制算法；标记 - 压缩算法。</li>
 <li>引用计数算法的优点：实现简单，垃圾对象便于辨识；判定效率高，回收没有延迟性。</li>
 <li>引用计数算法的缺点：需要单独的字段存储计数器，增加了空间的开销；每次赋值都需要更新计数器，增加了时间开销；无法处理循环引用的情况。</li>
-<li>GC Roots包括以下几类元素：虚拟机栈中引用的对象；本地方法栈内JNI引用的对象；方法区中类静态属性引用的对象；方法区中常量引用的对象；所有被同步锁synchronized持有的对象；Java虚拟机内部的引用等。</li>
-<li>永远不要主动调用某个对象的finalize()方法，应该交给垃圾回收机制调用。</li>
-<li>因为finalize()方法的存在，虚拟机中的对象可能处于三种状态：可触及的（从根节点开始，可以到达这个对象）；可复活的（对象的所有引用都被释放，但是对象可能在finalize()中复活）；不可触及的（对象的finalize()被调用并且没有被复活）。</li>
+<li>GC Roots 包括以下几类元素：虚拟机栈中引用的对象；本地方法栈内 JNI 引用的对象；方法区中类静态属性引用的对象；方法区中常量引用的对象；所有被同步锁 synchronized 持有的对象；Java 虚拟机内部的引用等。</li>
+<li>永远不要主动调用某个对象的 finalize()方法，应该交给垃圾回收机制调用。</li>
+<li>因为 finalize()方法的存在，虚拟机中的对象可能处于三种状态：可触及的（从根节点开始，可以到达这个对象）；可复活的（对象的所有引用都被释放，但是对象可能在 finalize()中复活）；不可触及的（对象的 finalize()被调用并且没有被复活）。</li>
 <li>finalize()方法允许在子类中被重写，用于在对象被回收时进行资源释放，比如关闭文件、套接字和数据库连接等。</li>
 <li>复制算法的优点：没有标记和清除过程，实现简单，运行高效；复制保证了空间的连续性，不会出现“碎片”问题。</li>
-<li>复制算法的缺点：需要两倍的内存空间；对于G1这种分拆为大量的region的GC，复制而不是移动，意味着GC需要维护region之间对象引用关系，不管是内存占用或者时间开销也不小。</li>
-<li>特别的，如果系统中的垃圾对象很多，复制算法需要复制的存活对象数量并不太大。（垃圾对象越多，复制算法越好）在新生代中，一次通常可以回收70% - 99%的内存空间，回收性价比很高，老年代则反之。</li>
+<li>复制算法的缺点：需要两倍的内存空间；对于 G1 这种分拆为大量的 region 的 GC，复制而不是移动，意味着 GC 需要维护 region 之间对象引用关系，不管是内存占用或者时间开销也不小。</li>
+<li>特别的，如果系统中的垃圾对象很多，复制算法需要复制的存活对象数量并不太大。（垃圾对象越多，复制算法越好）在新生代中，一次通常可以回收 70% - 99% 的内存空间，回收性价比很高，老年代则反之。</li>
 <li>分代收集算法是基于这样一个事实：不同的对象的生命周期是不一样的，因此，不同生命周期的对象可以采取不同的收集方式，以便提高回收效率。（一般是针对新生代和老年代）</li>
-<li>System.gc()（底层实现为Runtime.getRuntime().gc()）只是提醒jvm的垃圾回收器执行gc，但是不确定是否马上执行gc。</li>
-<li>System.runFinalization()会强制调用没有引用的对象的finalization方法。</li>
-<li>内存泄漏的例子：单例的生命周期和应用程序一样长，如果单例程序中持有外部对象的引用，这个外部对象无法被回收；一些提供close的资源未关闭导致内存泄漏（比如数据库连接dataSourse.getConnection，网络连接，IO连接）。</li>
-<li>强引用；软引用（内存不足时回收）；弱引用（GC时发现就回收，比如WeakHashMap）；虚引用（唯一目的在于跟踪垃圾回收过程，在对象被收集器回收时收到一个系统通知）。</li>
+<li>System.gc()（底层实现为 Runtime.getRuntime().gc()）只是提醒 jvm 的垃圾回收器执行 gc，但是不确定是否马上执行 gc。</li>
+<li>System.runFinalization()会强制调用没有引用的对象的 finalization 方法。</li>
+<li>内存泄漏的例子：单例的生命周期和应用程序一样长，如果单例程序中持有外部对象的引用，这个外部对象无法被回收；一些提供 close 的资源未关闭导致内存泄漏（比如数据库连接 dataSourse.getConnection，网络连接，IO 连接）。</li>
+<li>强引用；软引用（内存不足时回收）；弱引用（GC 时发现就回收，比如 WeakHashMap）；虚引用（唯一目的在于跟踪垃圾回收过程，在对象被收集器回收时收到一个系统通知）。</li>
 <li>串行回收器：Serial、Serial Old</li>
 <li>并行回收器：ParNew、Parallel Scavenge、Parallel Old</li>
 <li>并发回收器：CMS、G1</li>
 <li>新生代回收器：Serial、Parallel Scavenge、ParNew</li>
 <li>老年代回收器：Serial Old、Parallel Old、CMS</li>
 <li>整堆收集器：G1</li>
-<li>垃圾回收器组合关系：Serial和Serial Old；Parallel Scavenge和Parallel Old；CMS和ParNew。</li>
-<li>Serial使用复制算法；Serial Old使用标记-压缩算法。</li>
-<li>CMS垃圾回收器使用标记-清除算法。</li>
-<li>CMS分为四个阶段：初始标记（仅仅只标记出GC Roots能直接关联到的对象）；并发标记（从上一个阶段直接关联的对象开始遍历整个对象图的过程）；重新标记（由于并发标记工作线程和垃圾收集线程同时或者交叉运行，在这一个阶段修正因为用户程序继续运作而导致标记产生变动的那一部分对象的标记记录）；并发清理。</li>
-<li>G1垃圾回收器region之间是复制算法，但整体上实际可以看作是标记-压缩算法，两种方式都可以解决碎片化的问题。</li>
+<li>垃圾回收器组合关系：Serial 和 Serial Old；Parallel Scavenge 和 Parallel Old；CMS 和 ParNew。</li>
+<li>Serial 使用复制算法；Serial Old 使用标记 - 压缩算法。</li>
+<li>CMS 垃圾回收器使用标记 - 清除算法。</li>
+<li>CMS 分为四个阶段：初始标记（仅仅只标记出 GC Roots 能直接关联到的对象）；并发标记（从上一个阶段直接关联的对象开始遍历整个对象图的过程）；重新标记（由于并发标记工作线程和垃圾收集线程同时或者交叉运行，在这一个阶段修正因为用户程序继续运作而导致标记产生变动的那一部分对象的标记记录）；并发清理。</li>
+<li>G1 垃圾回收器 region 之间是复制算法，但整体上实际可以看作是标记 - 压缩算法，两种方式都可以解决碎片化的问题。</li>
 </ol>
 
     </div>
@@ -477,13 +478,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07f59bdc6f.html" rel="prev" title="Java面试八股文">
-                  <i class="fa fa-angle-left"></i> Java面试八股文
+                <a href="/2022/07f59bdc6f.html" rel="prev" title="Java 面试八股文">
+                  <i class="fa fa-angle-left"></i> Java 面试八股文
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/102ac2789e.html" rel="next" title="腾讯云服务器安装RabbitMQ">
-                  腾讯云服务器安装RabbitMQ <i class="fa fa-angle-right"></i>
+                <a href="/2022/102ac2789e.html" rel="next" title="腾讯云服务器安装 RabbitMQ">
+                  腾讯云服务器安装 RabbitMQ <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

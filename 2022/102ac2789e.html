@@ -10,8 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="iuYWJ97yBKj4O2Fp5Itv5bRDTCSSdKvgl_DDUa4sFp8">
-  <meta name="baidu-site-verification" content="code-isQpIpC66p">
+  <meta name="google-site-verification" content="ITNAemUjXaTd1v5hUBGye5IrdyCfz_nS7lgBEtda2">
+  <meta name="msvalidate.01" content="86188A2C1964427EB942511DCFE5EB04">
+  <meta name="baidu-site-verification" content="codeva-8LOI8JhMYp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -26,7 +27,7 @@
 
     <meta name="description" content="记录腾讯云服务器上安装RabbitMQ的过程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯云服务器安装RabbitMQ">
+<meta property="og:title" content="腾讯云服务器安装 RabbitMQ">
 <meta property="og:url" content="http://qushao.top/2022/102ac2789e.html">
 <meta property="og:site_name" content="屈少">
 <meta property="og:description" content="记录腾讯云服务器上安装RabbitMQ的过程">
@@ -38,7 +39,7 @@
 <meta property="og:image" content="http://qushao.top/images/RabbitMQ%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png">
 <meta property="og:image" content="http://qushao.top/images/RabbitMQ%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95.png">
 <meta property="article:published_time" content="2022-10-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-13T11:25:34.224Z">
+<meta property="article:modified_time" content="2024-01-03T10:59:54.783Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="RabbitMQ">
 <meta property="article:tag" content="Linux">
@@ -50,10 +51,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/102ac2789e.html","path":"2022/102ac2789e.html","title":"腾讯云服务器安装RabbitMQ"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/102ac2789e.html","path":"2022/102ac2789e.html","title":"腾讯云服务器安装 RabbitMQ"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>腾讯云服务器安装RabbitMQ | 屈少</title>
+<title>腾讯云服务器安装 RabbitMQ | 屈少</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKP2CMZE2V"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-WKP2CMZE2V","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -157,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85RabbitMQ"><span class="nav-number">1.</span> <span class="nav-text">腾讯云服务器安装RabbitMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E7%8E%AF%E5%A2%83"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1. 安装依赖环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E5%87%86%E5%A4%87%E6%89%80%E9%9C%80%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2. 下载准备所需安装包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E9%A1%BA%E5%BA%8F%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3. 顺序安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4. 启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">5. 设置开机自启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">6. 查看状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E5%BC%80%E5%90%AFweb%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">7. 开启web管理插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E6%9D%83%E9%99%90"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">8. 添加用户设置权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-%E4%BF%AE%E6%94%B9%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">9. 修改防火墙</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85%20RabbitMQ"><span class="nav-number">1.</span> <span class="nav-text">腾讯云服务器安装 RabbitMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%20%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E7%8E%AF%E5%A2%83"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1. 安装依赖环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%20%E4%B8%8B%E8%BD%BD%E5%87%86%E5%A4%87%E6%89%80%E9%9C%80%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2. 下载准备所需安装包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%20%E9%A1%BA%E5%BA%8F%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3. 顺序安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%20%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4. 启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%20%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">5. 设置开机自启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%20%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">6. 查看状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%20%E5%BC%80%E5%90%AF%20web%20%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">7. 开启 web 管理插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-%20%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E6%9D%83%E9%99%90"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">8. 添加用户设置权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-%20%E4%BF%AE%E6%94%B9%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">9. 修改防火墙 </span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -242,12 +243,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="腾讯云服务器安装RabbitMQ | 屈少">
+      <meta itemprop="name" content="腾讯云服务器安装 RabbitMQ | 屈少">
       <meta itemprop="description" content="记录腾讯云服务器上安装RabbitMQ的过程">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          腾讯云服务器安装RabbitMQ
+          腾讯云服务器安装 RabbitMQ
         </h1>
 
         <div class="post-meta-container">
@@ -265,7 +266,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 19:25:34" itemprop="dateModified" datetime="2023-11-13T19:25:34+08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,7 +279,7 @@
     </span>
 
   
-    <span id="/2022/102ac2789e.html" class="post-meta-item leancloud_visitors" data-flag-title="腾讯云服务器安装RabbitMQ" title="Views">
+    <span id="/2022/102ac2789e.html" class="post-meta-item leancloud_visitors" data-flag-title="腾讯云服务器安装 RabbitMQ" title="Views">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -300,7 +301,7 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="腾讯云服务器安装RabbitMQ" href="/2022/102ac2789e.html#SOHUCS" itemprop="discussionUrl">
+    <a title="腾讯云服务器安装 RabbitMQ" href="/2022/102ac2789e.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::cb6926d03a7cf79d8f9c3d74869645f7" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -329,42 +330,42 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="腾讯云服务器安装RabbitMQ"><a href="#腾讯云服务器安装RabbitMQ" class="headerlink" title="腾讯云服务器安装RabbitMQ"></a>腾讯云服务器安装RabbitMQ</h1><p>  最近在学习消息队列中间件的相关知识，实际在腾讯云服务器上进行实操验证，记录下安装流程。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="腾讯云服务器安装 RabbitMQ"><a href="# 腾讯云服务器安装 RabbitMQ" class="headerlink" title="腾讯云服务器安装 RabbitMQ"></a>腾讯云服务器安装 RabbitMQ</h1><p>  最近在学习消息队列中间件的相关知识，实际在腾讯云服务器上进行实操验证，记录下安装流程。</p>
 <hr>
 <p>在具体安装之前可以更新下所有的软件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
 
 <p>整个安装过程使用到的网站：</p>
-<p>RabbitMQ和Erlang版本要求：<span class="exturl" data-url="aHR0cHM6Ly93d3cucmFiYml0bXEuY29tL3doaWNoLWVybGFuZy5odG1s">RabbitMQ Erlang Version Requirements — RabbitMQ<i class="fa fa-external-link-alt"></i></span></p>
-<p>Erlang下载链接：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JhYmJpdG1xL2VybGFuZy1ycG0vcmVsZWFzZXM=">Releases · rabbitmq&#x2F;erlang-rpm (github.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p>RabbitMQ下载链接：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JhYmJpdG1xL3JhYmJpdG1xLXNlcnZlci9yZWxlYXNlcw==">Releases · rabbitmq&#x2F;rabbitmq-server (github.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p>Socat下载链接：<span class="exturl" data-url="aHR0cDovL3d3dy5ycG1maW5kLm5ldC9saW51eC9ycG0yaHRtbC9zZWFyY2gucGhwP3F1ZXJ5PXNvY2F0KHg4Ni02NCk=">RPM resource socat(x86-64) (rpmfind.net)<i class="fa fa-external-link-alt"></i></span></p>
+<p>RabbitMQ 和 Erlang 版本要求：<span class="exturl" data-url="aHR0cHM6Ly93d3cucmFiYml0bXEuY29tL3doaWNoLWVybGFuZy5odG1s">RabbitMQ Erlang Version Requirements — RabbitMQ<i class="fa fa-external-link-alt"></i></span></p>
+<p>Erlang 下载链接：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JhYmJpdG1xL2VybGFuZy1ycG0vcmVsZWFzZXM=">Releases · rabbitmq&#x2F;erlang-rpm (github.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p>RabbitMQ 下载链接：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JhYmJpdG1xL3JhYmJpdG1xLXNlcnZlci9yZWxlYXNlcw==">Releases · rabbitmq&#x2F;rabbitmq-server (github.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p>Socat 下载链接：<span class="exturl" data-url="aHR0cDovL3d3dy5ycG1maW5kLm5ldC9saW51eC9ycG0yaHRtbC9zZWFyY2gucGhwP3F1ZXJ5PXNvY2F0KHg4Ni02NCk=">RPM resource socat(x86-64) (rpmfind.net)<i class="fa fa-external-link-alt"></i></span></p>
 <p>本次实验所用安装包下载：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1LXNoYW8vRmlsZXMvdHJlZS9tYWluL1JhYmJpdE1RJUU1JUFFJTg5JUU4JUEzJTg1">https://github.com/qu-shao/Files/tree/main/RabbitMQ%E5%AE%89%E8%A3%85<i class="fa fa-external-link-alt"></i></span></p>
 <p><img data-src="/images/RabbitMQ-%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85%E5%8C%85.png"></p>
-<h4 id="1-安装依赖环境"><a href="#1-安装依赖环境" class="headerlink" title="1. 安装依赖环境"></a>1. 安装依赖环境</h4><p>RabbitMQ 是用Erlang编写的，在安装RabbitMQ之前必须安装Erlang编译所需的依赖软件</p>
+<h4 id="1- 安装依赖环境"><a href="#1- 安装依赖环境" class="headerlink" title="1. 安装依赖环境"></a>1. 安装依赖环境</h4><p>RabbitMQ 是用 Erlang 编写的，在安装 RabbitMQ 之前必须安装 Erlang 编译所需的依赖软件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc glibc-devel make ncurses-devel openssl-devel xmlto perl wget</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-下载准备所需安装包"><a href="#2-下载准备所需安装包" class="headerlink" title="2. 下载准备所需安装包"></a>2. 下载准备所需安装包</h4><p>RabbitMQ官网提供了版本和Erlang之间的关系如下图，选择相应的版本下载即可</p>
+<h4 id="2- 下载准备所需安装包"><a href="#2- 下载准备所需安装包" class="headerlink" title="2. 下载准备所需安装包"></a>2. 下载准备所需安装包</h4><p>RabbitMQ 官网提供了版本和 Erlang 之间的关系如下图，选择相应的版本下载即可</p>
 <p><img data-src="/images/RabbitMQ%E7%89%88%E6%9C%AC%E5%85%B3%E7%B3%BB.png"></p>
-<h4 id="3-顺序安装软件"><a href="#3-顺序安装软件" class="headerlink" title="3. 顺序安装软件"></a>3. 顺序安装软件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh erlang-25.1.1-1.el8.x86_64.rpm</span><br><span class="line">rpm -ivh socat-1.7.4.1-1.el8.x86_64.rpm</span><br><span class="line">rpm -ivh rabbitmq-server-3.11.2-1.el8.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h4 id="3- 顺序安装软件"><a href="#3- 顺序安装软件" class="headerlink" title="3. 顺序安装软件"></a>3. 顺序安装软件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh erlang-25.1.1-1.el8.x86_64.rpm</span><br><span class="line">rpm -ivh socat-1.7.4.1-1.el8.x86_64.rpm</span><br><span class="line">rpm -ivh rabbitmq-server-3.11.2-1.el8.noarch.rpm</span><br></pre></td></tr></table></figure>
 
 <p><img data-src="/images/RabbitMQ%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85.png"></p>
-<h4 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rabbitmq-server</span><br></pre></td></tr></table></figure>
+<h4 id="4- 启动服务"><a href="#4- 启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rabbitmq-server</span><br></pre></td></tr></table></figure>
 
-<h4 id="5-设置开机自启动"><a href="#5-设置开机自启动" class="headerlink" title="5. 设置开机自启动"></a>5. 设置开机自启动</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable rabbitmq-server</span><br></pre></td></tr></table></figure>
+<h4 id="5- 设置开机自启动"><a href="#5- 设置开机自启动" class="headerlink" title="5. 设置开机自启动"></a>5. 设置开机自启动</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable rabbitmq-server</span><br></pre></td></tr></table></figure>
 
-<h4 id="6-查看状态"><a href="#6-查看状态" class="headerlink" title="6. 查看状态"></a>6. 查看状态</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status rabbitmq-server</span><br></pre></td></tr></table></figure>
+<h4 id="6- 查看状态"><a href="#6- 查看状态" class="headerlink" title="6. 查看状态"></a>6. 查看状态</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status rabbitmq-server</span><br></pre></td></tr></table></figure>
 
 <p><img data-src="/images/RabbitMQ%E5%90%AF%E5%8A%A8.png"></p>
-<h4 id="7-开启web管理插件"><a href="#7-开启web管理插件" class="headerlink" title="7. 开启web管理插件"></a>7. 开启web管理插件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
+<h4 id="7- 开启 web 管理插件"><a href="#7- 开启 web 管理插件" class="headerlink" title="7. 开启 web 管理插件"></a>7. 开启 web 管理插件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
 
-<h4 id="8-添加用户设置权限"><a href="#8-添加用户设置权限" class="headerlink" title="8. 添加用户设置权限"></a>8. 添加用户设置权限</h4><p>RabbitMQ有一个默认的guest用户，但只能通过localhost访问，所以需要添加一个能够远程访问的用户。</p>
+<h4 id="8- 添加用户设置权限"><a href="#8- 添加用户设置权限" class="headerlink" title="8. 添加用户设置权限"></a>8. 添加用户设置权限</h4><p>RabbitMQ 有一个默认的 guest 用户，但只能通过 localhost 访问，所以需要添加一个能够远程访问的用户。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl add_user admin admin</span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br><span class="line">rabbitmqctl set_permissions -p / admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</span><br></pre></td></tr></table></figure>
 
-<h4 id="9-修改防火墙"><a href="#9-修改防火墙" class="headerlink" title="9. 修改防火墙"></a>9. 修改防火墙</h4><p>因为使用的是腾讯云服务器，所以需要添加相应端口的过滤规则，也可以在自己本机服务器上添加防火墙规则</p>
+<h4 id="9- 修改防火墙"><a href="#9- 修改防火墙" class="headerlink" title="9. 修改防火墙"></a>9. 修改防火墙 </h4><p> 因为使用的是腾讯云服务器，所以需要添加相应端口的过滤规则，也可以在自己本机服务器上添加防火墙规则</p>
 <p><img data-src="/images/RabbitMQ%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png"></p>
 <hr>
-<p>至此，基础的安装完成，同时也能够远程管理RabbitMQ了，浏览器访问 <span class="exturl" data-url="aHR0cDovL2lwOjE1NjcyLw==">http://IP:15672<i class="fa fa-external-link-alt"></i></span> 即可，后续会对具体的参数进行学习配置。</p>
+<p>至此，基础的安装完成，同时也能够远程管理 RabbitMQ 了，浏览器访问 <span class="exturl" data-url="aHR0cDovL2lwOjE1NjcyLw==">http://IP:15672<i class="fa fa-external-link-alt"></i></span> 即可，后续会对具体的参数进行学习配置。</p>
 <p><img data-src="/images/RabbitMQ%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95.png"></p>
 
     </div>
@@ -414,13 +415,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/0728becffb.html" rel="prev" title="JVM学习笔记">
-                  <i class="fa fa-angle-left"></i> JVM学习笔记
+                <a href="/2022/0728becffb.html" rel="prev" title="JVM 学习笔记">
+                  <i class="fa fa-angle-left"></i> JVM 学习笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/107d1b5fb3.html" rel="next" title="MQ学习笔记（一）——原生Java使用RabbitMQ">
-                  MQ学习笔记（一）——原生Java使用RabbitMQ <i class="fa fa-angle-right"></i>
+                <a href="/2022/107d1b5fb3.html" rel="next" title="MQ 学习笔记（一）——原生 Java 使用 RabbitMQ">
+                  MQ 学习笔记（一）——原生 Java 使用 RabbitMQ <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

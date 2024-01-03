@@ -10,8 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="iuYWJ97yBKj4O2Fp5Itv5bRDTCSSdKvgl_DDUa4sFp8">
-  <meta name="baidu-site-verification" content="code-isQpIpC66p">
+  <meta name="google-site-verification" content="ITNAemUjXaTd1v5hUBGye5IrdyCfz_nS7lgBEtda2">
+  <meta name="msvalidate.01" content="86188A2C1964427EB942511DCFE5EB04">
+  <meta name="baidu-site-verification" content="codeva-8LOI8JhMYp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -26,13 +27,13 @@
 
     <meta name="description" content="JDK在1.8推出了许多新特性，他们大多数肯定是一种更加高级便利的编码思想和方式，在最近的学习中发现很多JDK或者框架的源码中都大量使用到了Lambda表达式，虽然因为目前接触到的项目比较少，平时不怎么使用，但还是有必要作为自己的知识储备，培养自己良好的代码风格，往后的工作中也经常需要使用，于是进行了初步的学习以及记录，方便日后复习查看。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lambda表达式学习笔记">
+<meta property="og:title" content="Lambda 表达式学习笔记">
 <meta property="og:url" content="http://qushao.top/2022/1194f258f3.html">
 <meta property="og:site_name" content="屈少">
 <meta property="og:description" content="JDK在1.8推出了许多新特性，他们大多数肯定是一种更加高级便利的编码思想和方式，在最近的学习中发现很多JDK或者框架的源码中都大量使用到了Lambda表达式，虽然因为目前接触到的项目比较少，平时不怎么使用，但还是有必要作为自己的知识储备，培养自己良好的代码风格，往后的工作中也经常需要使用，于是进行了初步的学习以及记录，方便日后复习查看。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-22T14:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-13T11:25:34.048Z">
+<meta property="article:modified_time" content="2024-01-03T10:59:54.780Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="读书笔记">
 <meta property="article:tag" content="Java">
@@ -43,10 +44,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/1194f258f3.html","path":"2022/1194f258f3.html","title":"Lambda表达式学习笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/1194f258f3.html","path":"2022/1194f258f3.html","title":"Lambda 表达式学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Lambda表达式学习笔记 | 屈少</title>
+<title>Lambda 表达式学习笔记 | 屈少</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKP2CMZE2V"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-WKP2CMZE2V","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -150,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E6%8F%90"><span class="nav-number">1.0.2.</span> <span class="nav-text">使用前提</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%85%E9%A1%BB%E6%9C%89%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">必须有一个函数式接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">常见的函数式接口</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lambda%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.0.3.</span> <span class="nav-text">Lambda的底层实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">1.0.4.</span> <span class="nav-text">方法引用</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda%20%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">Lambda 表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E6%8F%90"><span class="nav-number">1.0.2.</span> <span class="nav-text">使用前提 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%85%E9%A1%BB%E6%9C%89%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.0.2.1.</span> <span class="nav-text"> 必须有一个函数式接口 </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">常见的函数式接口</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lambda%20%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.0.3.</span> <span class="nav-text">Lambda 的底层实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">1.0.4.</span> <span class="nav-text">方法引用 </span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,12 +236,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Lambda表达式学习笔记 | 屈少">
+      <meta itemprop="name" content="Lambda 表达式学习笔记 | 屈少">
       <meta itemprop="description" content="JDK在1.8推出了许多新特性，他们大多数肯定是一种更加高级便利的编码思想和方式，在最近的学习中发现很多JDK或者框架的源码中都大量使用到了Lambda表达式，虽然因为目前接触到的项目比较少，平时不怎么使用，但还是有必要作为自己的知识储备，培养自己良好的代码风格，往后的工作中也经常需要使用，于是进行了初步的学习以及记录，方便日后复习查看。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Lambda表达式学习笔记
+          Lambda 表达式学习笔记
         </h1>
 
         <div class="post-meta-container">
@@ -258,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 19:25:34" itemprop="dateModified" datetime="2023-11-13T19:25:34+08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,7 +272,7 @@
     </span>
 
   
-    <span id="/2022/1194f258f3.html" class="post-meta-item leancloud_visitors" data-flag-title="Lambda表达式学习笔记" title="Views">
+    <span id="/2022/1194f258f3.html" class="post-meta-item leancloud_visitors" data-flag-title="Lambda 表达式学习笔记" title="Views">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -293,7 +294,7 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Lambda表达式学习笔记" href="/2022/1194f258f3.html#SOHUCS" itemprop="discussionUrl">
+    <a title="Lambda 表达式学习笔记" href="/2022/1194f258f3.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::c7dafd2e14a5740b8d1c9a831964cc20" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -322,8 +323,8 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><hr>
-<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><ol>
+    <div class="post-body" itemprop="articleBody"><h2 id="Lambda 表达式"><a href="#Lambda 表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h2><hr>
+<h4 id="基本语法"><a href="# 基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><ol>
 <li>可选的大括号</li>
 </ol>
 <p>函数体只包含一个语句，不需要大括号</p>
@@ -340,7 +341,7 @@
 
 
 <ol start="3">
-<li>可选的返回关键字return</li>
+<li>可选的返回关键字 return</li>
 </ol>
 <p>函数体只有一个表达式，且运算结果匹配返回类型</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="type">int</span> a, <span class="type">int</span> b) -&gt; a + b;</span><br></pre></td></tr></table></figure>
@@ -355,15 +356,15 @@
 
 
 
-<h4 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h4><h5 id="必须有一个函数式接口"><a href="#必须有一个函数式接口" class="headerlink" title="必须有一个函数式接口"></a>必须有一个函数式接口</h5><p>有且只有一个抽象方法的接口；</p>
-<p>@FunctionnalInterface注解</p>
-<h5 id="常见的函数式接口"><a href="#常见的函数式接口" class="headerlink" title="常见的函数式接口"></a>常见的函数式接口</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">Runnable/Callable</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName());</span><br><span class="line">    &#125;).start();</span><br><span class="line"></span><br><span class="line">Supplier/Consumer</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">8</span> , <span class="number">88</span>, <span class="number">64</span> , <span class="number">5</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> getMax(() -&gt; &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> el : nums)&#123;</span><br><span class="line">                temp = Math.max(temp, el);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> temp;</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">(Supplier&lt;Integer&gt; sup)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sup.get();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">Comparator</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String[] strs = &#123;<span class="string">&quot;asas&quot;</span>, <span class="string">&quot;445465&quot;</span>, <span class="string">&quot;saasa&quot;</span>, <span class="string">&quot;qwqwq&quot;</span>, <span class="string">&quot;21212&quot;</span>&#125;;</span><br><span class="line">        Arrays.sort(strs, (s1, s2) -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span>(s1.length() &lt; s2.length())<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s1.length() &gt; s2.length())<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> s1.compareTo(s2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span>(String s : strs)&#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Predicate</span><br><span class="line">    </span><br><span class="line">Function</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h4 id="使用前提"><a href="# 使用前提" class="headerlink" title="使用前提"></a>使用前提 </h4><h5 id="必须有一个函数式接口"><a href="# 必须有一个函数式接口" class="headerlink" title="必须有一个函数式接口"></a> 必须有一个函数式接口 </h5><p> 有且只有一个抽象方法的接口；</p>
+<p>@FunctionnalInterface 注解</p>
+<h5 id="常见的函数式接口"><a href="# 常见的函数式接口" class="headerlink" title="常见的函数式接口"></a>常见的函数式接口</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">Runnable/Callable</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName());</span><br><span class="line">    &#125;).start();</span><br><span class="line"></span><br><span class="line">Supplier/Consumer</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">8</span> , <span class="number">88</span>, <span class="number">64</span> , <span class="number">5</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> getMax(() -&gt; &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> el : nums)&#123;</span><br><span class="line">                temp = Math.max(temp, el);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> temp;</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">(Supplier&lt;Integer&gt; sup)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sup.get();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">Comparator</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String[] strs = &#123;<span class="string">&quot;asas&quot;</span>, <span class="string">&quot;445465&quot;</span>, <span class="string">&quot;saasa&quot;</span>, <span class="string">&quot;qwqwq&quot;</span>, <span class="string">&quot;21212&quot;</span>&#125;;</span><br><span class="line">        Arrays.sort(strs, (s1, s2) -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span>(s1.length() &lt; s2.length())<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s1.length() &gt; s2.length())<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> s1.compareTo(s2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span>(String s : strs)&#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Predicate</span><br><span class="line">    </span><br><span class="line">Function</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="Lambda的底层实现"><a href="#Lambda的底层实现" class="headerlink" title="Lambda的底层实现"></a>Lambda的底层实现</h4><p>Lambda表达式的本质：函数式接口的匿名子类的匿名对象</p>
-<h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h4><p>引用已存在的方法，避免重复逻辑，本质上是对Lambda表达式的进一步化简，即如果存在某个对象中已经实现的代码逻辑和我们应该在Lambda表达式中编写的代码逻辑一致，那么直接调用该对象的该方法引用即可（要求为参数列表相同；返回值类型兼容）。具体使用格式为</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  通用格式</span></span><br><span class="line">对象 :: 方法名</span><br><span class="line">    </span><br><span class="line"><span class="comment">//  类方法（静态方法）</span></span><br><span class="line">类名 :: 静态方法</span><br><span class="line">Integer :: parseInt</span><br><span class="line">    </span><br><span class="line"><span class="comment">//  构造方法</span></span><br><span class="line">类名 :: <span class="keyword">new</span></span><br><span class="line"><span class="title class_">Student</span> :: <span class="keyword">new</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//  成员方法</span></span><br><span class="line">对象 :: 成员方法</span><br><span class="line"><span class="string">&quot;Hello&quot;</span> :: toUpperCase</span><br><span class="line"><span class="built_in">this</span> :: 方法名</span><br><span class="line"><span class="built_in">super</span> :: 方法名</span><br></pre></td></tr></table></figure>
+<h4 id="Lambda 的底层实现"><a href="#Lambda 的底层实现" class="headerlink" title="Lambda 的底层实现"></a>Lambda 的底层实现</h4><p>Lambda 表达式的本质：函数式接口的匿名子类的匿名对象</p>
+<h4 id="方法引用"><a href="# 方法引用" class="headerlink" title="方法引用"></a>方法引用 </h4><p> 引用已存在的方法，避免重复逻辑，本质上是对 Lambda 表达式的进一步化简，即如果存在某个对象中已经实现的代码逻辑和我们应该在 Lambda 表达式中编写的代码逻辑一致，那么直接调用该对象的该方法引用即可（要求为参数列表相同；返回值类型兼容）。具体使用格式为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  通用格式 </span></span><br><span class="line"> 对象 :: 方法名 </span><br><span class="line">    </span><br><span class="line"><span class="comment">//  类方法（静态方法）</span></span><br><span class="line"> 类名 :: 静态方法 </span><br><span class="line">Integer :: parseInt</span><br><span class="line">    </span><br><span class="line"><span class="comment">//  构造方法</span></span><br><span class="line"> 类名 :: <span class="keyword">new</span></span><br><span class="line"><span class="title class_">Student</span> :: <span class="keyword">new</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//  成员方法 </span></span><br><span class="line"> 对象 :: 成员方法</span><br><span class="line"><span class="string">&quot;Hello&quot;</span> :: toUpperCase</span><br><span class="line"><span class="built_in">this</span> :: 方法名</span><br><span class="line"><span class="built_in">super</span> :: 方法名</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -413,13 +414,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/11adf09ee.html" rel="prev" title="Java代理">
-                  <i class="fa fa-angle-left"></i> Java代理
+                <a href="/2022/11adf09ee.html" rel="prev" title="Java 代理">
+                  <i class="fa fa-angle-left"></i> Java 代理
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/11beb6dc8d.html" rel="next" title="Java多线程的几个经典问题">
-                  Java多线程的几个经典问题 <i class="fa fa-angle-right"></i>
+                <a href="/2022/11beb6dc8d.html" rel="next" title="Java 多线程的几个经典问题">
+                  Java 多线程的几个经典问题 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

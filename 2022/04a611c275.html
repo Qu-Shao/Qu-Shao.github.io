@@ -10,8 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="iuYWJ97yBKj4O2Fp5Itv5bRDTCSSdKvgl_DDUa4sFp8">
-  <meta name="baidu-site-verification" content="code-isQpIpC66p">
+  <meta name="google-site-verification" content="ITNAemUjXaTd1v5hUBGye5IrdyCfz_nS7lgBEtda2">
+  <meta name="msvalidate.01" content="86188A2C1964427EB942511DCFE5EB04">
+  <meta name="baidu-site-verification" content="codeva-8LOI8JhMYp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -38,7 +39,7 @@
 <meta property="og:image" content="http://qushao.top/images/elu.png">
 <meta property="og:image" content="http://qushao.top/images/softplus.png">
 <meta property="article:published_time" content="2022-04-01T14:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-13T11:25:34.456Z">
+<meta property="article:modified_time" content="2024-01-03T10:59:54.786Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="读书笔记">
@@ -157,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">深度学习之激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Sigmoid%E5%87%BD%E6%95%B0"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.Sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Tanh%EF%BC%88Hyperbolic-tangent-function%EF%BC%8C%E5%8F%8C%E6%9B%B2%E6%AD%A3%E5%88%87%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.Tanh（Hyperbolic tangent function，双曲正切激活函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ReLU%EF%BC%88Linear-rectification-function%EF%BC%8C%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.ReLU（Linear rectification function，线性整流函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Leaky-ReLU-%EF%BC%88%E5%B8%A6%E6%B3%84%E9%9C%B2%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.Leaky ReLU  （带泄露线性整流函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-ELU%EF%BC%88Exponential-Linear-Unit%EF%BC%8C%E6%8C%87%E6%95%B0%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%EF%BC%89"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.ELU（Exponential Linear Unit，指数线性单元）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-SoftPlus"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.SoftPlus</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">深度学习之激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Sigmoid%20%E5%87%BD%E6%95%B0"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.Sigmoid 函数 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Tanh%EF%BC%88Hyperbolic-tangent-function%EF%BC%8C%E5%8F%8C%E6%9B%B2%E6%AD%A3%E5%88%87%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.Tanh（Hyperbolic tangent function，双曲正切激活函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ReLU%EF%BC%88Linear-rectification-function%EF%BC%8C%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.ReLU（Linear rectification function，线性整流函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Leaky-ReLU-%EF%BC%88%E5%B8%A6%E6%B3%84%E9%9C%B2%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.Leaky ReLU  （带泄露线性整流函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-ELU%EF%BC%88Exponential-Linear-Unit%EF%BC%8C%E6%8C%87%E6%95%B0%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%EF%BC%89"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.ELU（Exponential Linear Unit，指数线性单元）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-SoftPlus"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.SoftPlus</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -265,7 +266,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 19:25:34" itemprop="dateModified" datetime="2023-11-13T19:25:34+08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -329,27 +330,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="深度学习之激活函数"><a href="#深度学习之激活函数" class="headerlink" title="深度学习之激活函数"></a>深度学习之激活函数</h2><p>​		最近在系统地学习一些深度学习的知识，发现其中的激活函数很有意思，激活函数的选择也往往可以作为深度学习中调优的一种手段，针对不同的数据、不同的问题采取合适的激活函数，往往可以取得比较好的效果。结合网上的一些文章以及自己的理解，在此记录一下以便之后复习。<br>​		首先要明确的是激活函数的作用，激活函数在神经网络中将神经元上经过权重计算完毕的输入以某种方式（根据具体选择的激活函数）进行映射，从而输出作为该神经元对于下一层网络的输入，那么明明已经对输入根据参数进行了权重计算为什么仍然需要激活函数呢？激活函数的作用在于增加网络的非线性，我们知道，一般的权重计算往往是Wx + b的形式，即神经元对于输入进行线性组合，如果不使用激活函数，那么无论神经网络有多少层，最终的结果仍然是线性的，即该计算可以用一层网络替代，这种神经网络一般不能解决复杂一点的问题。而使用激活函数后，每一层网络间就不仅仅是线性的叠加，我们通过使用非线性激活函数的方式来使得神经网络具有了解决非线性问题的能力。<br>​		以下是常用的几种激活函数。</p>
-<h4 id="1-Sigmoid函数"><a href="#1-Sigmoid函数" class="headerlink" title="1.Sigmoid函数"></a>1.Sigmoid函数</h4><p>公式：<br>$$ f(x)&#x3D;\frac{1}{1+e^{-x}} $$<br>图像：</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="深度学习之激活函数"><a href="# 深度学习之激活函数" class="headerlink" title="深度学习之激活函数"></a>深度学习之激活函数</h2><p>​		最近在系统地学习一些深度学习的知识，发现其中的激活函数很有意思，激活函数的选择也往往可以作为深度学习中调优的一种手段，针对不同的数据、不同的问题采取合适的激活函数，往往可以取得比较好的效果。结合网上的一些文章以及自己的理解，在此记录一下以便之后复习。<br>​		首先要明确的是激活函数的作用，激活函数在神经网络中将神经元上经过权重计算完毕的输入以某种方式（根据具体选择的激活函数）进行映射，从而输出作为该神经元对于下一层网络的输入，那么明明已经对输入根据参数进行了权重计算为什么仍然需要激活函数呢？激活函数的作用在于增加网络的非线性，我们知道，一般的权重计算往往是 Wx + b 的形式，即神经元对于输入进行线性组合，如果不使用激活函数，那么无论神经网络有多少层，最终的结果仍然是线性的，即该计算可以用一层网络替代，这种神经网络一般不能解决复杂一点的问题。而使用激活函数后，每一层网络间就不仅仅是线性的叠加，我们通过使用非线性激活函数的方式来使得神经网络具有了解决非线性问题的能力。<br>​		以下是常用的几种激活函数。</p>
+<h4 id="1-Sigmoid 函数"><a href="#1-Sigmoid 函数" class="headerlink" title="1.Sigmoid 函数"></a>1.Sigmoid 函数 </h4><p> 公式：<br>$$ f(x)&#x3D;\frac{1}{1+e^{-x}} $$<br>图像：</p>
 <p><img data-src="/images/sigmoid.png"></p>
-<p>​		Sigmoid是早期较为常用的激活函数，我们可以看出，Sigmoid函数的值域为(0, 1)，这相当于对数据进行了归一化处理，又因为概率的值域为[0, 1]，故Sigmoid很适合一些将概率作为输出的模型。同时，Sigmoid的图像比较平滑，这避免了输出存在较大的跳跃。</p>
-<p>​		但是，Sigmoid的平均值不是0（一般来说输出的均值为0的模型效果较好一些），同时，因为函数涉及到指数计算，而参数的更新又依赖于梯度下降，所以计算的时间一般较长。</p>
+<p>​		Sigmoid 是早期较为常用的激活函数，我们可以看出，Sigmoid 函数的值域为(0, 1)，这相当于对数据进行了归一化处理，又因为概率的值域为[0, 1]，故 Sigmoid 很适合一些将概率作为输出的模型。同时，Sigmoid 的图像比较平滑，这避免了输出存在较大的跳跃。</p>
+<p>​		但是，Sigmoid 的平均值不是 0（一般来说输出的均值为 0 的模型效果较好一些），同时，因为函数涉及到指数计算，而参数的更新又依赖于梯度下降，所以计算的时间一般较长。</p>
 <h4 id="2-Tanh（Hyperbolic-tangent-function，双曲正切激活函数）"><a href="#2-Tanh（Hyperbolic-tangent-function，双曲正切激活函数）" class="headerlink" title="2.Tanh（Hyperbolic tangent function，双曲正切激活函数）"></a>2.Tanh（Hyperbolic tangent function，双曲正切激活函数）</h4><p>公式：<br>$$ f(x)&#x3D;tanh(x)&#x3D;\frac{e^x-e^{-x}}{e^x+e^{-x}}&#x3D;\frac{2}{1+e^{-2x}}-1 $$<br>图像：</p>
 <p><img data-src="/images/tanh.png"></p>
-<p>​		同Sigmoid函数类似，Tanh函数也是一条平滑的S型曲线，但是Tanh函数的平均值为0，同时，对于负输入，Tanh将其映射为负，对于正输入，Tanh将其映射为正</p>
+<p>​		同 Sigmoid 函数类似，Tanh 函数也是一条平滑的 S 型曲线，但是 Tanh 函数的平均值为 0，同时，对于负输入，Tanh 将其映射为负，对于正输入，Tanh 将其映射为正</p>
 <h4 id="3-ReLU（Linear-rectification-function，线性整流函数）"><a href="#3-ReLU（Linear-rectification-function，线性整流函数）" class="headerlink" title="3.ReLU（Linear rectification function，线性整流函数）"></a>3.ReLU（Linear rectification function，线性整流函数）</h4><p>公式：<br>$$ f(x)&#x3D;\begin{cases} x，x\geq0\ 0， x&lt;0\end{cases}&#x3D;max(0,x) $$<br>图像：</p>
 <p><img data-src="/images/relu.png"></p>
-<p>​		ReLU函数是深度学习中较为流行的一种激活函数，ReLU可以实现单侧抑制（即把一部分神经元置0），能够稀疏模型，Sigmoid 和Tanh激活函数会导致一个非稀疏的神经网络，而ReLU大约 50% 的神经元会处于激活状态，具有很好的稀疏性。同时，ReLU函数右侧线性部分梯度始终为1，具有宽兴奋边界的特性（即兴奋程度可以非常高），不会发生神经网络的梯度消失问题，能够加速梯度下降的收敛速度。而Tanh和Sigmoid在离0点近的时候梯度大，在远离0点的时候梯度小，容易出现梯度消失。ReLU的计算也较为简单。</p>
-<p>​		ReLU的缺点在于ReLU函数的值域在0到正无穷，相当于给后一层的神经网络引入偏置偏移，会影响梯度下降的效率。另外，在训练时，如果参数在一次不恰当的更新后，某个ReLU神经元输出为0，那么这个神经元自身参数的梯度永远都会是0，在以后的训练过程中永远不能被激活。</p>
+<p>​		ReLU 函数是深度学习中较为流行的一种激活函数，ReLU 可以实现单侧抑制（即把一部分神经元置 0），能够稀疏模型，Sigmoid 和 Tanh 激活函数会导致一个非稀疏的神经网络，而 ReLU 大约 50% 的神经元会处于激活状态，具有很好的稀疏性。同时，ReLU 函数右侧线性部分梯度始终为 1，具有宽兴奋边界的特性（即兴奋程度可以非常高），不会发生神经网络的梯度消失问题，能够加速梯度下降的收敛速度。而 Tanh 和 Sigmoid 在离 0 点近的时候梯度大，在远离 0 点的时候梯度小，容易出现梯度消失。ReLU 的计算也较为简单。</p>
+<p>​		ReLU 的缺点在于 ReLU 函数的值域在 0 到正无穷，相当于给后一层的神经网络引入偏置偏移，会影响梯度下降的效率。另外，在训练时，如果参数在一次不恰当的更新后，某个 ReLU 神经元输出为 0，那么这个神经元自身参数的梯度永远都会是 0，在以后的训练过程中永远不能被激活。</p>
 <h4 id="4-Leaky-ReLU-（带泄露线性整流函数）"><a href="#4-Leaky-ReLU-（带泄露线性整流函数）" class="headerlink" title="4.Leaky ReLU  （带泄露线性整流函数）"></a>4.Leaky ReLU  （带泄露线性整流函数）</h4><p>公式：<br>$$ f(x)&#x3D;\begin{cases} x，x\geq0\ \gamma x， x&lt;0\end{cases}&#x3D;max(0,x)+\gamma min(0,x) $$<br>图像：</p>
 <p><img data-src="/images/lrelu.png"></p>
-<p>​		这里，r取0.01（r通常是0到1之间的数，通常取小于1的很小常数）。</p>
-<p>​		Leaky ReLU函数在输入x&lt;0时，能保持一个很小的梯度r。这样当神经元非激活时也能有一个非零的梯度可以更新参数，避免永远不能被激活，以便给网络继续学习的机会。特殊的，当不确定r，将r作为一个可学习的参数时，这种激活函数为PReLU。</p>
-<p>​		总结性的：当r&#x3D;0时，为ReLU；当r&#x3D;常数时，为Leaky ReLU；当r&#x3D;训练的参数时，为PReLU。理论上，后两者具有ReLU的所有优点并且避免了Dead ReLU问题，但是并没有实验能够证明后两者一定比ReLU更为优秀。一般在实验当中，我们可以首先试试ReLU的效果，当结果不大理想时可以试一试Leaky ReLU，而因为PReLU增加了需要学习的参数，建议只在训练数据集较大的情况下使用。</p>
+<p>​		这里，r 取 0.01（r 通常是 0 到 1 之间的数，通常取小于 1 的很小常数）。</p>
+<p>​		Leaky ReLU 函数在输入 x&lt;0 时，能保持一个很小的梯度 r。这样当神经元非激活时也能有一个非零的梯度可以更新参数，避免永远不能被激活，以便给网络继续学习的机会。特殊的，当不确定 r，将 r 作为一个可学习的参数时，这种激活函数为 PReLU。</p>
+<p>​		总结性的：当 r&#x3D;0 时，为 ReLU；当 r&#x3D; 常数时，为 Leaky ReLU；当 r&#x3D; 训练的参数时，为 PReLU。理论上，后两者具有 ReLU 的所有优点并且避免了 Dead ReLU 问题，但是并没有实验能够证明后两者一定比 ReLU 更为优秀。一般在实验当中，我们可以首先试试 ReLU 的效果，当结果不大理想时可以试一试 Leaky ReLU，而因为 PReLU 增加了需要学习的参数，建议只在训练数据集较大的情况下使用。</p>
 <h4 id="5-ELU（Exponential-Linear-Unit，指数线性单元）"><a href="#5-ELU（Exponential-Linear-Unit，指数线性单元）" class="headerlink" title="5.ELU（Exponential Linear Unit，指数线性单元）"></a>5.ELU（Exponential Linear Unit，指数线性单元）</h4><p>公式：<br>$$ f(x)&#x3D;\begin{cases} x，x\geq0\ \alpha (e^x-1)， x&lt;0\end{cases} $$<br>图像：</p>
 <p><img data-src="/images/elu.png"></p>
-<p>​		这里a取1。</p>
-<p>​		ELU函数融合了Sigmoid和ReLU，左侧具有软饱和性，右侧无饱和性。右侧线性部分使得ELU能够缓解梯度消失，而左侧软饱能够让ELU对输入变化或噪声更鲁棒。ELU的输出均值接近于零，所以收敛速度更快。</p>
+<p>​		这里 a 取 1。</p>
+<p>​		ELU 函数融合了 Sigmoid 和 ReLU，左侧具有软饱和性，右侧无饱和性。右侧线性部分使得 ELU 能够缓解梯度消失，而左侧软饱能够让 ELU 对输入变化或噪声更鲁棒。ELU 的输出均值接近于零，所以收敛速度更快。</p>
 <h4 id="6-SoftPlus"><a href="#6-SoftPlus" class="headerlink" title="6.SoftPlus"></a>6.SoftPlus</h4><p>公式：<br>$$ f(x)&#x3D;log(1+e^x) $$<br>图像：</p>
 <p><img data-src="/images/softplus.png"></p>
 
@@ -400,13 +401,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/03efc9353a.html" rel="prev" title="Java访问HashMap的方式">
-                  <i class="fa fa-angle-left"></i> Java访问HashMap的方式
+                <a href="/2022/03efc9353a.html" rel="prev" title="Java 访问 HashMap 的方式">
+                  <i class="fa fa-angle-left"></i> Java 访问 HashMap 的方式
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/04da61b44a.html" rel="next" title="Tensorflow2.x实现多元逻辑回归">
-                  Tensorflow2.x实现多元逻辑回归 <i class="fa fa-angle-right"></i>
+                <a href="/2022/04da61b44a.html" rel="next" title="Tensorflow2.x 实现多元逻辑回归">
+                  Tensorflow2.x 实现多元逻辑回归 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

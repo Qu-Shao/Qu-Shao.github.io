@@ -10,8 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="iuYWJ97yBKj4O2Fp5Itv5bRDTCSSdKvgl_DDUa4sFp8">
-  <meta name="baidu-site-verification" content="code-isQpIpC66p">
+  <meta name="google-site-verification" content="ITNAemUjXaTd1v5hUBGye5IrdyCfz_nS7lgBEtda2">
+  <meta name="msvalidate.01" content="86188A2C1964427EB942511DCFE5EB04">
+  <meta name="baidu-site-verification" content="codeva-8LOI8JhMYp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -26,13 +27,13 @@
 
     <meta name="description" content="记录Java访问HashMap的方式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java访问HashMap的方式">
+<meta property="og:title" content="Java 访问 HashMap 的方式">
 <meta property="og:url" content="http://qushao.top/2022/03efc9353a.html">
 <meta property="og:site_name" content="屈少">
 <meta property="og:description" content="记录Java访问HashMap的方式">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-13T11:25:33.689Z">
+<meta property="article:modified_time" content="2024-01-03T10:59:54.775Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="读书笔记">
 <meta property="article:tag" content="Java">
@@ -43,10 +44,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/03efc9353a.html","path":"2022/03efc9353a.html","title":"Java访问HashMap的方式"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/03efc9353a.html","path":"2022/03efc9353a.html","title":"Java 访问 HashMap 的方式"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Java访问HashMap的方式 | 屈少</title>
+<title>Java 访问 HashMap 的方式 | 屈少</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKP2CMZE2V"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-WKP2CMZE2V","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -150,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E8%AE%BF%E9%97%AEHashMap%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">Java访问HashMap元素的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87Key%E6%9D%A5%E8%AE%BF%E9%97%AEValue"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">第一种方式：通过Key来访问Value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87Map-keySet-%E4%BD%BF%E7%94%A8iterator%E8%AE%BF%E9%97%AEkey%E5%92%8Cvalue"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">第二种方式：通过Map.keySet()使用iterator访问key和value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87Map-Entry-%E8%AE%BF%E9%97%AEkey%E5%92%8Cvalue"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">第三种方式：通过Map.Entry()访问key和value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87Map-entrySet-%E4%BD%BF%E7%94%A8iterator%E8%AE%BF%E9%97%AEkey%E5%92%8Cvalue"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">第四种方式：通过Map.entrySet()使用iterator访问key和value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87Map-values-%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E7%9A%84value%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%8D%E8%83%BD%E9%81%8D%E5%8E%86%E9%94%AEkey"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">第五种方式：通过Map.values()遍历所有的value，但是不能遍历键key</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%20%E8%AE%BF%E9%97%AE%20HashMap%20%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">Java 访问 HashMap 元素的方式 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87%20Key%20%E6%9D%A5%E8%AE%BF%E9%97%AE%20Value"><span class="nav-number">1.0.0.1.</span> <span class="nav-text"> 第一种方式：通过 Key 来访问 Value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87%20Map-keySet-%20%E4%BD%BF%E7%94%A8%20iterator%20%E8%AE%BF%E9%97%AE%20key%20%E5%92%8C%20value"><span class="nav-number">1.0.0.2.</span> <span class="nav-text"> 第二种方式：通过 Map.keySet() 使用 iterator 访问 key 和 value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87%20Map-Entry-%20%E8%AE%BF%E9%97%AE%20key%20%E5%92%8C%20value"><span class="nav-number">1.0.0.3.</span> <span class="nav-text"> 第三种方式：通过 Map.Entry() 访问 key 和 value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87%20Map-entrySet-%20%E4%BD%BF%E7%94%A8%20iterator%20%E8%AE%BF%E9%97%AE%20key%20%E5%92%8C%20value"><span class="nav-number">1.0.0.4.</span> <span class="nav-text"> 第四种方式：通过 Map.entrySet() 使用 iterator 访问 key 和 value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%80%9A%E8%BF%87%20Map-values-%20%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E7%9A%84%20value%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%8D%E8%83%BD%E9%81%8D%E5%8E%86%E9%94%AE%20key"><span class="nav-number">1.0.0.5.</span> <span class="nav-text"> 第五种方式：通过 Map.values() 遍历所有的 value，但是不能遍历键 key</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,12 +236,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Java访问HashMap的方式 | 屈少">
+      <meta itemprop="name" content="Java 访问 HashMap 的方式 | 屈少">
       <meta itemprop="description" content="记录Java访问HashMap的方式">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java访问HashMap的方式
+          Java 访问 HashMap 的方式
         </h1>
 
         <div class="post-meta-container">
@@ -258,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 19:25:33" itemprop="dateModified" datetime="2023-11-13T19:25:33+08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,7 +272,7 @@
     </span>
 
   
-    <span id="/2022/03efc9353a.html" class="post-meta-item leancloud_visitors" data-flag-title="Java访问HashMap的方式" title="Views">
+    <span id="/2022/03efc9353a.html" class="post-meta-item leancloud_visitors" data-flag-title="Java 访问 HashMap 的方式" title="Views">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -293,7 +294,7 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Java访问HashMap的方式" href="/2022/03efc9353a.html#SOHUCS" itemprop="discussionUrl">
+    <a title="Java 访问 HashMap 的方式" href="/2022/03efc9353a.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::7f9333a55776cc7f3afc71d69693bff8" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -322,30 +323,30 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Java访问HashMap元素的方式"><a href="#Java访问HashMap元素的方式" class="headerlink" title="Java访问HashMap元素的方式"></a>Java访问HashMap元素的方式</h1><p>  HashMap作为最常用的集合之一，可以表示元素间的映射关系，或者用于数据的统计。</p>
-<p>  HashMap最多只允许一条记录的键为Null；允许多条记录的值为 Null。（不允许键重复，但允许值重复）</p>
-<p>  HashMap不支持线程的同步（任一时刻可以有多个线程同时写HashMap，即线程非安全），可能会导致数据的不一致。如果需要同步，可以用Collections的synchronizedMap()方法使HashMap具有同步的能力，或者使ConcurrentHashMap。</p>
-<p>  Hashtable与HashMap类似。不同的是：它不允许记录的键或者值为空；它支持线程的同步（任一时刻只有一个线程能写Hashtable，即线程安全），因此也导致了Hashtable在写入时会比较慢。</p>
-<p>  最近在刷算法题中，发现经常需要使用它，所以这里对Java访问HashMap元素的方式进行一个汇总，一方面巩固学习，另一方面方便日后查看使用。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="Java 访问 HashMap 元素的方式"><a href="#Java 访问 HashMap 元素的方式" class="headerlink" title="Java 访问 HashMap 元素的方式"></a>Java 访问 HashMap 元素的方式 </h1><p>  HashMap 作为最常用的集合之一，可以表示元素间的映射关系，或者用于数据的统计。</p>
+<p>  HashMap 最多只允许一条记录的键为 Null；允许多条记录的值为 Null。（不允许键重复，但允许值重复）</p>
+<p>  HashMap 不支持线程的同步（任一时刻可以有多个线程同时写 HashMap，即线程非安全），可能会导致数据的不一致。如果需要同步，可以用 Collections 的 synchronizedMap() 方法使 HashMap 具有同步的能力，或者使 ConcurrentHashMap。</p>
+<p>  Hashtable 与 HashMap 类似。不同的是：它不允许记录的键或者值为空；它支持线程的同步（任一时刻只有一个线程能写 Hashtable，即线程安全），因此也导致了 Hashtable 在写入时会比较慢。</p>
+<p>  最近在刷算法题中，发现经常需要使用它，所以这里对 Java 访问 HashMap 元素的方式进行一个汇总，一方面巩固学习，另一方面方便日后查看使用。</p>
 <hr>
-<h4 id="第一种方式：通过Key来访问Value"><a href="#第一种方式：通过Key来访问Value" class="headerlink" title="第一种方式：通过Key来访问Value"></a>第一种方式：通过Key来访问Value</h4><p>  HashMap中内置的方法keySet()可以返回一个hashmap中所有key的set集合，再根据得到的key就可以访问hashmap中对应key的value。</p>
+<h4 id="第一种方式：通过 Key 来访问 Value"><a href="# 第一种方式：通过 Key 来访问 Value" class="headerlink" title="第一种方式：通过 Key 来访问 Value"></a> 第一种方式：通过 Key 来访问 Value</h4><p>  HashMap 中内置的方法 keySet() 可以返回一个 hashmap 中所有 key 的 set 集合，再根据得到的 key 就可以访问 hashmap 中对应 key 的 value。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(String key : hm.keySet())&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> hm.get(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="第二种方式：通过Map-keySet-使用iterator访问key和value"><a href="#第二种方式：通过Map-keySet-使用iterator访问key和value" class="headerlink" title="第二种方式：通过Map.keySet()使用iterator访问key和value"></a>第二种方式：通过Map.keySet()使用iterator访问key和value</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">Iterator&lt;String&gt; it = hm.keySet().iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> it.next();</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> hm.get(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第二种方式：通过 Map-keySet- 使用 iterator 访问 key 和 value"><a href="# 第二种方式：通过 Map-keySet- 使用 iterator 访问 key 和 value" class="headerlink" title="第二种方式：通过 Map.keySet() 使用 iterator 访问 key 和 value"></a> 第二种方式：通过 Map.keySet() 使用 iterator 访问 key 和 value</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">Iterator&lt;String&gt; it = hm.keySet().iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> it.next();</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> hm.get(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="第三种方式：通过Map-Entry-访问key和value"><a href="#第三种方式：通过Map-Entry-访问key和value" class="headerlink" title="第三种方式：通过Map.Entry()访问key和value"></a>第三种方式：通过Map.Entry()访问key和value</h4><p>  entrySet()方法将返回映射中包含的映射的 Set 视图</p>
+<h4 id="第三种方式：通过 Map-Entry- 访问 key 和 value"><a href="# 第三种方式：通过 Map-Entry- 访问 key 和 value" class="headerlink" title="第三种方式：通过 Map.Entry() 访问 key 和 value"></a> 第三种方式：通过 Map.Entry() 访问 key 和 value</h4><p>  entrySet() 方法将返回映射中包含的映射的 Set 视图 </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(Map.Entry&lt;String, String&gt; entry : hm.entrySet())&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> entry.getKey();</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> entry.getValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="第四种方式：通过Map-entrySet-使用iterator访问key和value"><a href="#第四种方式：通过Map-entrySet-使用iterator访问key和value" class="headerlink" title="第四种方式：通过Map.entrySet()使用iterator访问key和value"></a>第四种方式：通过Map.entrySet()使用iterator访问key和value</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = hm.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    Map.Entry&lt;String, String&gt; entry = it.next();</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> entry.getKey();</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> entry.getValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第四种方式：通过 Map-entrySet- 使用 iterator 访问 key 和 value"><a href="# 第四种方式：通过 Map-entrySet- 使用 iterator 访问 key 和 value" class="headerlink" title="第四种方式：通过 Map.entrySet() 使用 iterator 访问 key 和 value"></a> 第四种方式：通过 Map.entrySet() 使用 iterator 访问 key 和 value</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = hm.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    Map.Entry&lt;String, String&gt; entry = it.next();</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> entry.getKey();</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> entry.getValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="第五种方式：通过Map-values-遍历所有的value，但是不能遍历键key"><a href="#第五种方式：通过Map-values-遍历所有的value，但是不能遍历键key" class="headerlink" title="第五种方式：通过Map.values()遍历所有的value，但是不能遍历键key"></a>第五种方式：通过Map.values()遍历所有的value，但是不能遍历键key</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(String value : hm.values())&#123;</span><br><span class="line">    <span class="comment">/* 处理逻辑 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第五种方式：通过 Map-values- 遍历所有的 value，但是不能遍历键 key"><a href="# 第五种方式：通过 Map-values- 遍历所有的 value，但是不能遍历键 key" class="headerlink" title="第五种方式：通过 Map.values() 遍历所有的 value，但是不能遍历键 key"></a> 第五种方式：通过 Map.values() 遍历所有的 value，但是不能遍历键 key</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; hm = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(String value : hm.values())&#123;</span><br><span class="line">    <span class="comment">/* 处理逻辑 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>  上述五种方式中，除了最后一种方式只能获取HashMap的value，其余方式都可以同时获取到key和value；同时，方式一和方式二都是使用keySet()方法先获取到key的集合再访问value，只是方式二在对key的获取上使用了迭代器，类似的方式三和方式四也是这样。</p>
+<p>  上述五种方式中，除了最后一种方式只能获取 HashMap 的 value，其余方式都可以同时获取到 key 和 value；同时，方式一和方式二都是使用 keySet() 方法先获取到 key 的集合再访问 value，只是方式二在对 key 的获取上使用了迭代器，类似的方式三和方式四也是这样。</p>
 
     </div>
 

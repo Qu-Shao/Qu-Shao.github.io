@@ -10,8 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="iuYWJ97yBKj4O2Fp5Itv5bRDTCSSdKvgl_DDUa4sFp8">
-  <meta name="baidu-site-verification" content="code-isQpIpC66p">
+  <meta name="google-site-verification" content="ITNAemUjXaTd1v5hUBGye5IrdyCfz_nS7lgBEtda2">
+  <meta name="msvalidate.01" content="86188A2C1964427EB942511DCFE5EB04">
+  <meta name="baidu-site-verification" content="codeva-8LOI8JhMYp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -26,14 +27,14 @@
 
     <meta name="description" content="使用Tensorflow2.5实现了基本的神经网络的构建，数据集为MNIST（手写数字识别）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tensorflow2.x深度学习使用Sequential一般步骤">
+<meta property="og:title" content="Tensorflow2.x 深度学习使用 Sequential 一般步骤">
 <meta property="og:url" content="http://qushao.top/2022/04507f527d.html">
 <meta property="og:site_name" content="屈少">
 <meta property="og:description" content="使用Tensorflow2.5实现了基本的神经网络的构建，数据集为MNIST（手写数字识别）">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://qushao.top/images/mnist.png">
 <meta property="article:published_time" content="2022-04-06T06:40:00.000Z">
-<meta property="article:modified_time" content="2023-11-13T11:25:34.376Z">
+<meta property="article:modified_time" content="2024-01-03T10:59:54.784Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="读书笔记">
@@ -46,10 +47,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/04507f527d.html","path":"2022/04507f527d.html","title":"Tensorflow2.x深度学习使用Sequential一般步骤"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://qushao.top/2022/04507f527d.html","path":"2022/04507f527d.html","title":"Tensorflow2.x 深度学习使用 Sequential 一般步骤"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tensorflow2.x深度学习使用Sequential一般步骤 | 屈少</title>
+<title>Tensorflow2.x 深度学习使用 Sequential 一般步骤 | 屈少</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKP2CMZE2V"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-WKP2CMZE2V","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -153,7 +154,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tensorflow2-x%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8Sequential%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">Tensorflow2.x深度学习使用Sequential一般步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">实验代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">实验结果：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">实验总结：</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tensorflow2-x%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8%20Sequential%20%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">Tensorflow2.x 深度学习使用 Sequential 一般步骤 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text"> 实验代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text"> 实验结果：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text"> 实验总结：</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,12 +239,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Tensorflow2.x深度学习使用Sequential一般步骤 | 屈少">
+      <meta itemprop="name" content="Tensorflow2.x 深度学习使用 Sequential 一般步骤 | 屈少">
       <meta itemprop="description" content="使用Tensorflow2.5实现了基本的神经网络的构建，数据集为MNIST（手写数字识别）">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Tensorflow2.x深度学习使用Sequential一般步骤
+          Tensorflow2.x 深度学习使用 Sequential 一般步骤
         </h1>
 
         <div class="post-meta-container">
@@ -261,7 +262,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 19:25:34" itemprop="dateModified" datetime="2023-11-13T19:25:34+08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -274,7 +275,7 @@
     </span>
 
   
-    <span id="/2022/04507f527d.html" class="post-meta-item leancloud_visitors" data-flag-title="Tensorflow2.x深度学习使用Sequential一般步骤" title="Views">
+    <span id="/2022/04507f527d.html" class="post-meta-item leancloud_visitors" data-flag-title="Tensorflow2.x 深度学习使用 Sequential 一般步骤" title="Views">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -296,7 +297,7 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Tensorflow2.x深度学习使用Sequential一般步骤" href="/2022/04507f527d.html#SOHUCS" itemprop="discussionUrl">
+    <a title="Tensorflow2.x 深度学习使用 Sequential 一般步骤" href="/2022/04507f527d.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::7c70a0daa8ae0e94e10f8e72a689cadb" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -325,44 +326,44 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="Tensorflow2-x深度学习使用Sequential一般步骤"><a href="#Tensorflow2-x深度学习使用Sequential一般步骤" class="headerlink" title="Tensorflow2.x深度学习使用Sequential一般步骤"></a>Tensorflow2.x深度学习使用Sequential一般步骤</h3><hr>
+    <div class="post-body" itemprop="articleBody"><h3 id="Tensorflow2-x 深度学习使用 Sequential 一般步骤"><a href="#Tensorflow2-x 深度学习使用 Sequential 一般步骤" class="headerlink" title="Tensorflow2.x 深度学习使用 Sequential 一般步骤"></a>Tensorflow2.x 深度学习使用 Sequential 一般步骤 </h3><hr>
 <ol>
-<li>建立模型</li>
+<li> 建立模型 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = tf.keras.Sequential()</span><br><span class="line">model.add()</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>查看摘要</li>
+<li> 查看摘要 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>配置训练方法</li>
+<li> 配置训练方法 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>()</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
-<li>训练模型</li>
+<li> 训练模型 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.fit()</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
-<li>评估模型</li>
+<li> 评估模型 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate()</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
-<li>使用模型</li>
+<li> 使用模型 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.predict()</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="实验代码："><a href="#实验代码：" class="headerlink" title="实验代码："></a>实验代码：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载数据集</span></span><br><span class="line">mnist = tf.keras.datasets.mnist</span><br><span class="line">(train_x, train_y), (test_x, test_y) = mnist.load_data()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据预处理</span></span><br><span class="line">X_train = tf.cast(train_x/<span class="number">255.0</span>, tf.float32)</span><br><span class="line">X_test = tf.cast(test_x/<span class="number">255.0</span>, tf.float32)</span><br><span class="line">Y_train = tf.cast(train_y, tf.int16)</span><br><span class="line">Y_test = tf.cast(test_y, tf.int16)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立模型</span></span><br><span class="line">model = tf.keras.Sequential()</span><br><span class="line"><span class="comment"># 输入层，MNIST数据集每张图片大小为28*28，需要先将图片转换为一维张量</span></span><br><span class="line">model.add(tf.keras.layers.Flatten(input_shape=(<span class="number">28</span>, <span class="number">28</span>)))</span><br><span class="line"><span class="comment"># 一层隐藏层，为全连接层，节点个数为128</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&quot;relu&quot;</span>))</span><br><span class="line"><span class="comment"># 输出层，MNIST共有10种结果，故节点数为10</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&quot;softmax&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看模型</span></span><br><span class="line">model.summary()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置模型</span></span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&quot;adam&quot;</span>,</span><br><span class="line">              loss=<span class="string">&quot;sparse_categorical_crossentropy&quot;</span>,</span><br><span class="line">              metrics=[<span class="string">&quot;sparse_categorical_accuracy&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line">model.fit(X_train, Y_train, batch_size=<span class="number">64</span>, epochs=<span class="number">10</span>, validation_split=<span class="number">0.25</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 评估模型</span></span><br><span class="line">model.evaluate(X_test, Y_test, verbose=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">model.save(<span class="string">&quot;mnist_model&quot;</span>, save_format=<span class="string">&quot;tf&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用模型</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    index = np.random.randint(<span class="number">0</span>, <span class="number">10000</span>)</span><br><span class="line">    <span class="comment"># 因为在输入层将数据转换为了一维数组，所以预测的时候也需要保证输入和输入层一致</span></span><br><span class="line">    demo = tf.reshape(X_test[index], (<span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>))</span><br><span class="line">    y_pred = np.argmax(model.predict(demo))</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">6</span>, i+<span class="number">1</span>)</span><br><span class="line">    plt.axis(<span class="string">&quot;off&quot;</span>)</span><br><span class="line">    plt.imshow(test_x[index], cmap=<span class="string">&quot;gray&quot;</span>)</span><br><span class="line">    plt.title(<span class="string">&quot;y=&quot;</span> + <span class="built_in">str</span>(test_y[index]) + <span class="string">&quot;\ny_pred=&quot;</span> + <span class="built_in">str</span>(y_pred))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h4 id="实验代码："><a href="# 实验代码：" class="headerlink" title="实验代码："></a> 实验代码：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载数据集 </span></span><br><span class="line">mnist = tf.keras.datasets.mnist</span><br><span class="line">(train_x, train_y), (test_x, test_y) = mnist.load_data()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据预处理 </span></span><br><span class="line">X_train = tf.cast(train_x/<span class="number">255.0</span>, tf.float32)</span><br><span class="line">X_test = tf.cast(test_x/<span class="number">255.0</span>, tf.float32)</span><br><span class="line">Y_train = tf.cast(train_y, tf.int16)</span><br><span class="line">Y_test = tf.cast(test_y, tf.int16)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立模型 </span></span><br><span class="line">model = tf.keras.Sequential()</span><br><span class="line"><span class="comment"># 输入层，MNIST 数据集每张图片大小为 28*28，需要先将图片转换为一维张量 </span></span><br><span class="line">model.add(tf.keras.layers.Flatten(input_shape=(<span class="number">28</span>, <span class="number">28</span>)))</span><br><span class="line"><span class="comment"># 一层隐藏层，为全连接层，节点个数为 128</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&quot;relu&quot;</span>))</span><br><span class="line"><span class="comment"># 输出层，MNIST 共有 10 种结果，故节点数为 10</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&quot;softmax&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看模型 </span></span><br><span class="line">model.summary()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置模型 </span></span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&quot;adam&quot;</span>,</span><br><span class="line">              loss=<span class="string">&quot;sparse_categorical_crossentropy&quot;</span>,</span><br><span class="line">              metrics=[<span class="string">&quot;sparse_categorical_accuracy&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型 </span></span><br><span class="line">model.fit(X_train, Y_train, batch_size=<span class="number">64</span>, epochs=<span class="number">10</span>, validation_split=<span class="number">0.25</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 评估模型 </span></span><br><span class="line">model.evaluate(X_test, Y_test, verbose=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型 </span></span><br><span class="line">model.save(<span class="string">&quot;mnist_model&quot;</span>, save_format=<span class="string">&quot;tf&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用模型 </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    index = np.random.randint(<span class="number">0</span>, <span class="number">10000</span>)</span><br><span class="line">    <span class="comment"># 因为在输入层将数据转换为了一维数组，所以预测的时候也需要保证输入和输入层一致 </span></span><br><span class="line">    demo = tf.reshape(X_test[index], (<span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>))</span><br><span class="line">    y_pred = np.argmax(model.predict(demo))</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">6</span>, i+<span class="number">1</span>)</span><br><span class="line">    plt.axis(<span class="string">&quot;off&quot;</span>)</span><br><span class="line">    plt.imshow(test_x[index], cmap=<span class="string">&quot;gray&quot;</span>)</span><br><span class="line">    plt.title(<span class="string">&quot;y=&quot;</span> + <span class="built_in">str</span>(test_y[index]) + <span class="string">&quot;\ny_pred=&quot;</span> + <span class="built_in">str</span>(y_pred))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a>实验结果：</h4><p><img data-src="/images/mnist.png"></p>
+<h4 id="实验结果："><a href="# 实验结果：" class="headerlink" title="实验结果："></a> 实验结果：</h4><p><img data-src="/images/mnist.png"></p>
 <hr>
-<h4 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a>实验总结：</h4><p>其实对于一般的神经网络，构建的方法都很类似，它们主要的不同体现在对各种参数（比如优化器、激活函数、评价指标、损失函数）的选择以及隐藏层的数量、每一层的神经元个数上。我们需要注意的是虽然使用tf.keras.Sequential()构建神经网络只需要关注输入层和输出层的结构（隐藏层会自动根据上下层的结构生成对应的训练参数结构），但是必须保证使用模型预测时数据集的处理和模型一致（这也是本次实验中容易出错的地方）。</p>
+<h4 id="实验总结："><a href="# 实验总结：" class="headerlink" title="实验总结："></a> 实验总结：</h4><p> 其实对于一般的神经网络，构建的方法都很类似，它们主要的不同体现在对各种参数（比如优化器、激活函数、评价指标、损失函数）的选择以及隐藏层的数量、每一层的神经元个数上。我们需要注意的是虽然使用 tf.keras.Sequential() 构建神经网络只需要关注输入层和输出层的结构（隐藏层会自动根据上下层的结构生成对应的训练参数结构），但是必须保证使用模型预测时数据集的处理和模型一致（这也是本次实验中容易出错的地方）。</p>
 
     </div>
 
@@ -412,8 +413,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/04da61b44a.html" rel="prev" title="Tensorflow2.x实现多元逻辑回归">
-                  <i class="fa fa-angle-left"></i> Tensorflow2.x实现多元逻辑回归
+                <a href="/2022/04da61b44a.html" rel="prev" title="Tensorflow2.x 实现多元逻辑回归">
+                  <i class="fa fa-angle-left"></i> Tensorflow2.x 实现多元逻辑回归
                 </a>
             </div>
             <div class="post-nav-item">
