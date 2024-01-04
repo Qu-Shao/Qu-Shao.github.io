@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/green/pace-theme-bounce.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"qushao.top","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"qushao.top","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":true,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="RabbitMQ的一些高级特性">
 <meta property="og:type" content="article">
@@ -286,13 +286,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="firestore-visitors-count"></span>
     </span>
-    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span id="busuanzi_value_page_pv"></span>
-    </span>
   
   <span class="post-meta-item">
     
@@ -419,7 +412,7 @@
 <h5 id="延迟队列"><a href="# 延迟队列" class="headerlink" title="延迟队列"></a>延迟队列 </h5><p> 延迟队列，即消息进入队列后不会被立即消费，只有到达指定时间后，才会被消费。</p>
 <p>虽然 RabbitMQ 中没有提供延迟队列的功能，但是可以通过 TTL 和死信队列组合实现延迟队列的效果。</p>
 <hr>
-<h5 id="日志与监控"><a href="# 日志与监控" class="headerlink" title="日志与监控"></a>日志与监控</h5><p>RabbitMQ 默认日志存放路径： &#x2F;var&#x2F;log&#x2F;rabbitmq&#x2F;<span class="exturl" data-url="bWFpbHRvOiYjMTE0OyYjeDYxOyYjeDYyOyYjOTg7JiMxMDU7JiMxMTY7JiN4NDA7JiN4Nzg7JiMxMjA7JiN4Nzg7JiN4MmU7JiN4NmM7JiN4NmY7JiN4Njc7">&#114;&#x61;&#x62;&#98;&#105;&#116;&#x40;&#x78;&#120;&#x78;&#x2e;&#x6c;&#x6f;&#x67;<i class="fa fa-external-link-alt"></i></span></p>
+<h5 id="日志与监控"><a href="# 日志与监控" class="headerlink" title="日志与监控"></a>日志与监控</h5><p>RabbitMQ 默认日志存放路径： &#x2F;var&#x2F;log&#x2F;rabbitmq&#x2F;<span class="exturl" data-url="bWFpbHRvOiYjeDcyOyYjOTc7JiN4NjI7JiM5ODsmI3g2OTsmIzExNjsmIzY0OyYjMTIwOyYjMTIwOyYjMTIwOyYjeDJlOyYjMTA4OyYjMTExOyYjeDY3Ow==">&#x72;&#97;&#x62;&#98;&#x69;&#116;&#64;&#120;&#120;&#120;&#x2e;&#108;&#111;&#x67;<i class="fa fa-external-link-alt"></i></span></p>
 <p>rabbitmqctl 管理和监控命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">查看队列 </span><br><span class="line">rabbitmqctl list_queues</span><br><span class="line"></span><br><span class="line"> 查看 exchanges</span><br><span class="line">rabbitmqctl list_exchanges</span><br><span class="line"></span><br><span class="line">查看用户 </span><br><span class="line">rabbitmqctl list_users</span><br><span class="line"></span><br><span class="line"> 查看连接 </span><br><span class="line">rabbitmqctl list_connections</span><br><span class="line"></span><br><span class="line"> 查看消费者信息 </span><br><span class="line">rabbitmqctl list_consumers</span><br><span class="line"></span><br><span class="line"> 查看环境变量 </span><br><span class="line">rabbitmqctl environment</span><br><span class="line"></span><br><span class="line"> 查看未被确认的队列 </span><br><span class="line">rabbitmqctl list_queues name messages_unacknowlegded</span><br><span class="line"></span><br><span class="line"> 查看单个队列的内存使用情况 </span><br><span class="line">rabbitmqctl list_queues name memory</span><br><span class="line"></span><br><span class="line"> 查看准备就绪的队列</span><br><span class="line">rabbitmqctl list_queues name messages_ready</span><br></pre></td></tr></table></figure>
 
@@ -515,28 +508,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="c811d7be186e00ccd5a8515abd693585"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button changyan">changyan</a>
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button livere">livere</a>
+      </div>
+        <div class="comment-position changyan">
+          <div class="comments" id="SOHUCS" sid="c811d7be186e00ccd5a8515abd693585"></div>
+        </div>
+        <div class="comment-position disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NTkzNC8zMjM5Nw=="></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NTkzNC8zMjM5Nw=="></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
 </div>
   </main>
 
@@ -551,24 +540,6 @@
     </span>
     <span class="author" itemprop="copyrightHolder">屈少</span>
   </div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="Total Visitors">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="Total Views">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9waXNjZXMv">NexT.Pisces</span>
   </div>
 
@@ -603,7 +574,6 @@
 
 
   
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/firebase@10.7.0/firebase-app-compat.js" integrity="sha256-388UwEUWqCZ5RBBAQoR8vK1Ty8qzxqP/ia3cr4RCkeg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/firebase@10.7.0/firebase-firestore-compat.js" integrity="sha256-7TKLwCozPrhvsOS7FuSEpQel4auRWA5oQiqAA2QyMXo=" crossorigin="anonymous"></script>
