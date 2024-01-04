@@ -47,7 +47,7 @@
 <meta property="og:image" content="http://qushao.top/images/VGGNet16_loss.png">
 <meta property="og:image" content="http://qushao.top/images/VGGNet16_res.png">
 <meta property="article:published_time" content="2022-04-10T14:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-03T10:59:54.773Z">
+<meta property="article:modified_time" content="2022-04-10T14:00:00.000Z">
 <meta property="article:author" content="屈少">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="读书笔记">
@@ -182,7 +182,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -193,7 +193,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -272,13 +272,6 @@
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-01-03 18:59:54" itemprop="dateModified" datetime="2024-01-03T18:59:54+08:00">2024-01-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
@@ -341,10 +334,10 @@
     
     <div class="post-body" itemprop="articleBody"><h1 id="CNN- 卷积神经网络 - 学习笔记"><a href="#CNN- 卷积神经网络 - 学习笔记" class="headerlink" title="CNN(卷积神经网络)学习笔记"></a>CNN(卷积神经网络)学习笔记</h1><hr>
 <h3 id="基本概念"><a href="# 基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img data-src="/images/CNN.png"></p>
-<p>​		神经网络的基本组成为输入层、隐藏层和输出层。而卷积神经网络和一般的神经网络的区别在于将隐藏层细分为了卷积层、池化层和激活层，其中卷积层通过卷积核在原始图像上平移提取特征；池化层（一般为最大池化和平均池化）压缩数据和参数的量，减小过拟合，降低网路的复杂程度；激活层用来增加非线性分割的能力。</p>
-<p>​		为什么需要卷积神经网络：图片数据由很多的像素点组成，每个像素点在不同通道（一般为 RGB，3 种通道）的值共同表征一张图片。因此一般来说，一张图片数据的输入为 N*N*C（其中 N*N 为图片的像素点个数，C 为通道数），而在现实中，N 一般可以达到上千，对于一般的神经网络，假设一层隐藏层的神经元个数为 M，对于该层隐藏层，需要的参数个数为 N*N*M，这会导致神经网络的参数过多了。我们知道，神经网络的学习能力一般是与神经网络的参数个数正相关的，过多的参数会导致最终模型的学习能力过强，过拟合，同时，过多的参数也会增加计算的复杂度。</p>
-<p>​		而卷积神经网络可以大大减少神经网络所需要的参数。卷积神经网络的核心就是卷积核，而卷积核的本质就是一个大小很小的矩阵（三维输入的神经元，长度 * 宽度 * 通道），我们通过将这个矩阵在图像上平移运算提取图像的某种特征。卷积核不同，提取的特征也就不同。</p>
-<p>​		对于卷积核，我们必须明确，卷积核的深度应该和输入数据的深度一致（比如 3 通道的图像，则处理的卷积核深度也为 3，因为这一特性，在使用一些 api 的时候不需要人工地指定该值），其次，卷积核的数量等价于经卷积核运算输出的维度，池化层其实也可以看做特殊的一种卷积核，因为一般经过池化后输出数据的大小会小于输入数据的大小（通过设置步长），为保证不损失太多的信息，通常会选择在池化层增加“卷积核”的数量从而产生更多维度的数据。</p>
+<p>&emsp;&emsp; 神经网络的基本组成为输入层、隐藏层和输出层。而卷积神经网络和一般的神经网络的区别在于将隐藏层细分为了卷积层、池化层和激活层，其中卷积层通过卷积核在原始图像上平移提取特征；池化层（一般为最大池化和平均池化）压缩数据和参数的量，减小过拟合，降低网路的复杂程度；激活层用来增加非线性分割的能力。</p>
+<p>&emsp;&emsp; 为什么需要卷积神经网络：图片数据由很多的像素点组成，每个像素点在不同通道（一般为 RGB，3 种通道）的值共同表征一张图片。因此一般来说，一张图片数据的输入为 N*N*C（其中 N*N 为图片的像素点个数，C 为通道数），而在现实中，N 一般可以达到上千，对于一般的神经网络，假设一层隐藏层的神经元个数为 M，对于该层隐藏层，需要的参数个数为 N*N*M，这会导致神经网络的参数过多了。我们知道，神经网络的学习能力一般是与神经网络的参数个数正相关的，过多的参数会导致最终模型的学习能力过强，过拟合，同时，过多的参数也会增加计算的复杂度。</p>
+<p>&emsp;&emsp; 而卷积神经网络可以大大减少神经网络所需要的参数。卷积神经网络的核心就是卷积核，而卷积核的本质就是一个大小很小的矩阵（三维输入的神经元，长度 * 宽度 * 通道），我们通过将这个矩阵在图像上平移运算提取图像的某种特征。卷积核不同，提取的特征也就不同。</p>
+<p>&emsp;&emsp; 对于卷积核，我们必须明确，卷积核的深度应该和输入数据的深度一致（比如 3 通道的图像，则处理的卷积核深度也为 3，因为这一特性，在使用一些 api 的时候不需要人工地指定该值），其次，卷积核的数量等价于经卷积核运算输出的维度，池化层其实也可以看做特殊的一种卷积核，因为一般经过池化后输出数据的大小会小于输入数据的大小（通过设置步长），为保证不损失太多的信息，通常会选择在池化层增加“卷积核”的数量从而产生更多维度的数据。</p>
 <h5 id="图片卷积输出大小公式："><a href="# 图片卷积输出大小公式：" class="headerlink" title="图片卷积输出大小公式："></a>图片卷积输出大小公式：</h5><p>输入图片大小——W*W</p>
 <p>卷积核大小——F*F</p>
 <p>步长——S</p>
@@ -352,11 +345,11 @@
 <p>PS: 对这些超参数，常见的设置是 F&#x3D;3，S&#x3D;1，P&#x3D;1</p>
 <h5 id="卷积层参数个数计算公式："><a href="# 卷积层参数个数计算公式：" class="headerlink" title="卷积层参数个数计算公式："></a>卷积层参数个数计算公式：</h5><p>存在 bias：<br>$$<br>Count&#x3D;C_{out}*(k_{weight}*k_{height}*C_{in}+1)<br>$$</p>
 <hr>
-<p>​		卷积和池化相当于做特征工程，最后的全连接层在整个卷积神经网络中起到“分类器”的作用（如果 FC 层作为最后一层，再加上 softmax 或者 wx+b，则可以分别作为分类或回归的作用，即“分类器”或“回归器”的作用）；如果作为倒数第 2，3 层的话，FC 层的作用是信息融合，增强信息表达。</p>
+<p>&emsp;&emsp; 卷积和池化相当于做特征工程，最后的全连接层在整个卷积神经网络中起到“分类器”的作用（如果 FC 层作为最后一层，再加上 softmax 或者 wx+b，则可以分别作为分类或回归的作用，即“分类器”或“回归器”的作用）；如果作为倒数第 2，3 层的话，FC 层的作用是信息融合，增强信息表达。</p>
 <hr>
-<h3 id="经典案例"><a href="# 经典案例" class="headerlink" title="经典案例"></a>经典案例 </h3><h5 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h5><p>LeNet 神经网络由深度学习三巨头之一的 Yan LeCun 提出，他同时也是卷积神经网络 (CNN，Convolutional Neural Networks) 之父。LeNet 主要用来进行手写字符的识别与分类，并在美国的银行中投入了使用。LeNet 的实现确立了 CNN 的结构，现在神经网络中的许多内容在 LeNet 的网络结构中都能看到，例如卷积层，Pooling 层，ReLU 层。虽然 LeNet 早在 20 世纪 90 年代就已经提出了，但由于当时缺乏大规模的训练数据，计算机硬件的性能也较低，因此 LeNet 神经网络在处理复杂问题时效果并不理想。LeNet 的设计较为简单，其处理复杂数据的能力有限；此外，在近年来的研究中许多学者已经发现全连接层的计算代价过大，而使用全部由卷积层组成的神经网络。</p>
+<h3 id="经典案例"><a href="# 经典案例" class="headerlink" title="经典案例"></a>经典案例 </h3><h5 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h5><p>&emsp;&emsp;LeNet 神经网络由深度学习三巨头之一的 Yan LeCun 提出，他同时也是卷积神经网络 (CNN，Convolutional Neural Networks) 之父。LeNet 主要用来进行手写字符的识别与分类，并在美国的银行中投入了使用。LeNet 的实现确立了 CNN 的结构，现在神经网络中的许多内容在 LeNet 的网络结构中都能看到，例如卷积层，Pooling 层，ReLU 层。虽然 LeNet 早在 20 世纪 90 年代就已经提出了，但由于当时缺乏大规模的训练数据，计算机硬件的性能也较低，因此 LeNet 神经网络在处理复杂问题时效果并不理想。LeNet 的设计较为简单，其处理复杂数据的能力有限；此外，在近年来的研究中许多学者已经发现全连接层的计算代价过大，而使用全部由卷积层组成的神经网络。</p>
 <h6 id="模型结构："><a href="# 模型结构：" class="headerlink" title="模型结构："></a>模型结构：</h6><p><img data-src="/images/LeNet.jpeg"></p>
-<p>LeNet-5 包含七层，不包括输入，每一层都包含可训练参数（权重)，当时使用的输入数据是 32*32 像素的图像。下面逐层介绍 LeNet-5 的结构，并且，卷积层将用 Cx 表示，子采样层则被标记为 Sx，完全连接层被标记为 Fx，其中 x 是层索引。</p>
+<p>&emsp;&emsp;LeNet-5 包含七层，不包括输入，每一层都包含可训练参数（权重)，当时使用的输入数据是 32*32 像素的图像。下面逐层介绍 LeNet-5 的结构，并且，卷积层将用 Cx 表示，子采样层则被标记为 Sx，完全连接层被标记为 Fx，其中 x 是层索引。</p>
 <p>层 C1 是具有六个 5*5 的卷积核的卷积层（convolution），特征映射的大小为 28*28，这样可以防止输入图像的信息掉出卷积核边界。C1 包含 156 个可训练参数和 122304 个连接。</p>
 <p>层 S2 是输出 6 个大小为 14*14 的特征图的子采样层（subsampling&#x2F;pooling）。每个特征图中的每个单元连接到 C1 中的对应特征图中的 2*2 个邻域。S2 中单位的四个输入相加，然后乘以可训练系数（权重），然后加到可训练偏差（bias）。结果通过 S 形函数传递。由于 2*2 个感受域不重叠，因此 S2 中的特征图只有 C1 中的特征图的一半行数和列数。S2 层有 12 个可训练参数和 5880 个连接。</p>
 <p>层 C3 是具有 16 个 5*5 的卷积核的卷积层。前六个特征图的输入是 S2 中的三个特征图的每个连续子集，接下来的六个特征图的输入则来自四个连续子集的输入，接下来的三个特征图的输入来自不连续的四个子集。最后一个特征图的输入来自 S2 所有特征图。C3 层有 1516 个可训练参数和 151600 个连接。</p>
@@ -375,7 +368,7 @@
 <p><img data-src="/images/LeNet_loss.png"></p>
 <p><img data-src="/images/LeNet_res.png"></p>
 <hr>
-<h5 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h5><p>AlexNet 由 Geoffrey 和他的学生 Alex 提出，并在 2012 年的 ILSVRC 竞赛中获得了第一名。Alexnet 共有 8 层结构，前 5 层为卷积层，后三层为全连接层。AlexNet 网络结构具有如下特点：</p>
+<h5 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h5><p>&emsp;&emsp;AlexNet 由 Geoffrey 和他的学生 Alex 提出，并在 2012 年的 ILSVRC 竞赛中获得了第一名。Alexnet 共有 8 层结构，前 5 层为卷积层，后三层为全连接层。AlexNet 网络结构具有如下特点：</p>
 <ol>
 <li>AlexNet 在激活函数上选取了非线性非饱和的 relu 函数，在训练阶段梯度衰减快慢方面，relu 函数比传统神经网络所选取的非线性饱和函数（如 sigmoid 函数，tanh 函数）要快许多。</li>
 <li>AlexNet 在双 gpu 上运行，每个 gpu 负责一半网络的运算。</li>
@@ -384,7 +377,7 @@
 <li>使用随机丢弃技术（dropout）选择性地忽略训练中的单个神经元，避免模型的过拟合。</li>
 </ol>
 <h6 id="模型结构：-1"><a href="# 模型结构：-1" class="headerlink" title="模型结构："></a>模型结构：</h6><p><img data-src="/images/AlexNet.png"></p>
-<p>AlexNet 一共有 8 层</p>
+<p>&emsp;&emsp;AlexNet 一共有 8 层</p>
 <p>第一层：卷积层 1，输入为 224 × 224 × 3 的图像，卷积核的数量为 96，论文中两片 GPU 分别计算 48 个核; 卷积核的大小为 11 × 11 × 3，stride &#x3D; 4，padding &#x3D; 2。然后进行 (Local Response Normalized), 后面跟着池化 pool_size &#x3D; (3, 3), stride &#x3D; 2, padding &#x3D; 0 最终获得第一层卷积的 feature map，最终第一层卷积的输出为 96×55×55；</p>
 <p>第二层：卷积层 2，输入为上一层卷积的 feature map， 卷积核的个数为 256 个，论文中的两个 GPU 分别有 128 个卷积核。卷积核的大小为：5 × 5 × 48, padding &#x3D; 2, stride &#x3D; 1; 然后做 LRN， 最后 max_pooling, pool_size &#x3D; (3, 3), stride &#x3D; 2；</p>
 <p>第三层：卷积层 3，输入为第二层的输出，卷积核个数为 384, kernel_size &#x3D; (3 × 3 × 256)， padding &#x3D; 1，第三层没有做 LRN 和 Pool；</p>
@@ -397,8 +390,8 @@
 <p><img data-src="/images/AlexNet_loss.png"></p>
 <p><img data-src="/images/AlexNet_res.png"></p>
 <hr>
-<h5 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h5><p>2014 年，牛津大学计算机视觉组和 Google DeepMind 公司的研究员一起研发出了新的深度卷积神经网络：VGGNet，并取得了 ILSVRC2014 比赛分类项目的第二名（第一名是 GoogLeNet，也是同年提出的）和定位项目的第一名。</p>
-<p>VGGNet 探索了卷积神经网络的深度与其性能之间的关系，成功地构筑了 16~19 层深的卷积神经网络，证明了增加网络的深度能够在一定程度上影响网络最终的性能，使错误率大幅下降，同时拓展性又很强，迁移到其它图片数据上的泛化性也非常好。到目前为止，VGG 仍然被用来提取图像特征。VGGNet 可以看成是加深版本的 AlexNet，都是由卷积层、全连接层两大部分构成。它有如下几个特点：</p>
+<h5 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h5><p>&emsp;&emsp;2014 年，牛津大学计算机视觉组和 Google DeepMind 公司的研究员一起研发出了新的深度卷积神经网络：VGGNet，并取得了 ILSVRC2014 比赛分类项目的第二名（第一名是 GoogLeNet，也是同年提出的）和定位项目的第一名。</p>
+<p>&emsp;&emsp;VGGNet 探索了卷积神经网络的深度与其性能之间的关系，成功地构筑了 16~19 层深的卷积神经网络，证明了增加网络的深度能够在一定程度上影响网络最终的性能，使错误率大幅下降，同时拓展性又很强，迁移到其它图片数据上的泛化性也非常好。到目前为止，VGG 仍然被用来提取图像特征。VGGNet 可以看成是加深版本的 AlexNet，都是由卷积层、全连接层两大部分构成。它有如下几个特点：</p>
 <ol>
 <li>小卷积核和多卷积子层，使用小卷积核 (3x3) 和多卷积子层代替一个卷积核较大的卷积层的好处一是可以减少参数，二是相当于进行了更多的非线性映射，可以增加网络的拟合 &#x2F; 表达能力。VGG 的作者认为两个 3x3 的卷积堆叠获得的感受野大小，相当一个 5x5 的卷积；而 3 个 3x3 卷积的堆叠获取到的感受野相当于一个 7x7 的卷积。这样可以增加非线性映射，也能很好地减少参数（例如 7x7 的参数为 49 个，而 3 个 3x3 的参数为 27）</li>
 <li>小池化核，相比 AlexNet 的 3x3 的池化核，VGG 全部采用 2x2 的池化核。</li>
@@ -409,7 +402,7 @@
 <li>采用了 Multi-Scale 的方法来训练和预测，可以增加训练的数据量，防止模型过拟合，提升预测准确率。</li>
 </ol>
 <h6 id="模型结构：-2"><a href="# 模型结构：-2" class="headerlink" title="模型结构："></a>模型结构：</h6><p><img data-src="/images/VGGNet.png"></p>
-<p>VGG16 处理过程如下：</p>
+<p>&emsp;&emsp;VGG16 处理过程如下：</p>
 <ol>
 <li>输入 224x224x3 的图片，经 64 个 3x3 的卷积核做两次卷积 +ReLU，卷积后的尺寸变为 224x224x64</li>
 <li>做 max pooling（最大化池化），池化单元尺寸为 2x2（效果为图像尺寸减半），池化后的尺寸变为 112x112x64</li>
